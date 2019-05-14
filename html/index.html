@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Legacy :</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Link Bootstrao CSS Here -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+    <!-- Link CSS style Here -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <!-- link JQuery min -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+
+    <!-- Link Font Awsome Here -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+
+    <!-- Link Firebase Here -->
+  </head>
+
+  <body>
+    <!-- nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+      <a class="navbar-brand" href="#">Legacy</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active donate">
+            <a class="nav-link donate" href="#">Donate <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Contact Us <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              My Account
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0">
+          <button class="btn bg-warning btn-outline-dark my-2 my-sm-0" type="submit"><i class="fas fa-heart"></i></button>
+          <button class="btn bg-danger btn-outline-dark my-2 my-sm-0" type="submit"><i class="fas fa-star"></i></button>
+          <button class="btn bg-info btn-outline-dark my-2 my-sm-0" type="submit">Login</button>
+        </form>
+      </div>
+    </nav>
+    <!-- -------------------------------------------------------------------------------------- -->
+
+    <!-- Jubotron -->
+    <div class="jumbotron">
+      <h1 class="display-4">This is your Legacy..</h1>
+      <p class="lead">We need voluteers :</p>
+      <img class="img1" src="../assets/imgs/img1.jpg" />
+      <img class="img1" src="../assets/imgs/img2.jpg" />
+      <img class="img1" src="../assets/imgs/img3.jpg" />
+      <img class="img1" src="../assets/imgs/img4.jpg" />
+      <img class="img1" src="../assets/imgs/img5.jpg" />
+
+      <!-- Search for volunteer opportunity by topic -->
+      <div class="form-row">
+        <div class="col-7">
+          <input type="text" class="form-control" placeholder="Search Topics" />
+        </div>
+        <div class="col">
+          <a class="btn btn-danger btn-md" href="#" role="button" id="searchBtn">Search</a>
+        </div>
+      </div>
+      <hr class="my-4" />
+
+      <!-- -Jing's btn 2------------------------------ -->
+      <div class="form-row">
+        <div class="col-7">
+          <input id="hottopicSearch" type="text" class="form-control" placeholder="Search Topics" />
+        </div>
+        <div class="col">
+          <a class="btn btn-danger btn-md" href="hottopicsSearch.html" role="button">Search 2</a>
+        </div>
+      </div>
+      <hr class="my-4" />
+
+      <br />
+      <!-- Search by Locations -->
+
+      <form>
+        <h5>Search for volunteer opportunities by locations :</h5>
+        <div class="form-row">
+          <div class="col-7">
+            <input type="text" class="form-control" placeholder="Country" />
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="City" />
+          </div>
+          <div class="col">
+            <a class="btn btn-success btn-md" href="#" role="button" id="submitSearchBtn">Submit</a>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- ------------------------------------------------------------------------------------ -->
+
+    <!-- Display Volunteer Storues Card -->
+    <div class="container-fluid">
+      <h2>Volunteer Stories :</h2>
+      <!-- Card 1 -->
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-3">
+          <div class="card" style="width: 18rem;">
+            <img src="../assets/imgs/img10.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-3">
+          <div class="card" style="width: 18rem;">
+            <img src="../assets/imgs/img8.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-3">
+          <div class="card" style="width: 18rem;">
+            <img src="../assets/imgs/img9.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+    </div>
+    <!-- ------------------------------------------------------------------------------ -->
+    <hr />
+    <!-- Footer -->
+    <div class="card-body">
+      <footer class="card-footer text-muted">Legacy : Copyright 2019</footer>
+    </div>
+    <!-- Link JavaScript Here -->
+    <script src="../assets/javascript/app.js"></script>
+
+    <script src="../assets/javascript/jing.js"></script>
+  </body>
+</html>
