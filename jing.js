@@ -1,71 +1,68 @@
 
-(function () {
-    var cx = '007887247332676928493:ix05svhfpzm';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-})();
 
 
 $(document).ready(function () {
 
-    function hottopictSearch() {
+    $("#htSearch").on("click", function () {
 
 
-        // // Logging the URL so we have access to it for troubleshooting
-        // console.log("---------------\nURL: " + queryURL + "\n---------------");
-        // console.log(queryURL + $.param(queryParams));
-        // return queryURL + $.param(queryParams);
+
+        $(".volunteer-section").empty();
 
         var hotTopics = $("#hottopicSearch").val().trim();
 
         var queryURL = "https://www.googleapis.com/customsearch/v1?q=" +
-            hotTopics + "&api_key=AIzaSyBJrw0IM3bX1sGlbgH1Pwwbygf422fFx_M";
-
+            hotTopics + "&cx=007887247332676928493%3Aix05svhfpzm&key=AIzaSyBJrw0IM3bX1sGlbgH1Pwwbygf422fFx_M";
+        console.log(queryURL);
         $.ajax({
             url: queryURL,
             method: "GET"
         })
             .then(function (response) {
-                var results = response.data;
-                for (i=0; i<results.length;i++){
-                    var volunteer = response.items[i];
-
-
-
-
-
-
-                }
-
               
 
-        })
+                var results = response.items;
+                for (i = 0; i < results.length; i++) {
+                    var volunteer = results[i];
+
+                    // Increase the volunteerCount (track volunteer # - starting at 1)
+                    var volunteerCount = i + 1;
+
+                    // Create the  list group to contain the volunteer and add the volunteer content for each
+                    var $volunteerList = $("<ul>");
+                    $volunteerList.addClass("list-group");
+
+                    // Add the newly created element to the DOM
+                    $(".volunteer-section").append($volunteerList);
+
+                    // If the item has a htmlTitle, log and append to $volunteerList
+                    var volunteerTitle = volunteer.htmlTitle;
+                    // console.log(volunteerTitle);
+                    var $volunteerListItem = $("<li class='list-group-item'>");
+                    $volunteerListItem.append(
+                        "<span class='label label-primary'>" +
+                        volunteerCount +
+                        "</span>" +
+
+                        "<strong> " +
+                        volunteerTitle +
+                        "</strong>"
+                    );
+                
+                    $volunteerList.append($volunteerListItem);
+
+                    // link, snippethtml, pagemap.metatags[og:description];[og:title];[og:street-address];[og:locality];[og:country-name];[og:image]
+                }
 
 
 
+            })
+       
 
 
+    })
+   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    }
 
 
 })
