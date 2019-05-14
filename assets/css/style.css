@@ -1,52 +1,47 @@
 .img1 {
-    height: 150px;
-    width: 200px;
-    margin: 20px;
+  height: 150px;
+  width: 200px;
+  margin: 20px;
 }
 
 .jumbotron {
-    background-image: url("bg.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
+  background-image: url('../imgs/bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .navbar.navbar-expand-lg.navbar-light.bg-info {
-    background-image: url(".jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
+  background-image: url('.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .color {
-    color: white;
+  color: white;
 }
 
-
 .img11 {
-    height: 250px;
-    width: 31%;
-    margin: 10px;
+  height: 250px;
+  width: 31%;
+  margin: 10px;
 }
 
 .nav-link.donate {
-    color: green;
+  color: green;
 }
 
 .card {
-    width: 33% ;
-    margin: auto;
+  width: 33%;
+  margin: auto;
 }
 
 .card-img-top {
-    max-width:100%;
-    height: 200px;
-
+  max-width: 100%;
+  height: 200px;
 }
 
-
 body {
-    background-image: url("bgb.png");
+  background-image: url('../imgs/bgb.png');
 }
