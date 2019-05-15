@@ -13,7 +13,8 @@ $(document).ready(function () {
 
         var queryURL = "https://www.googleapis.com/customsearch/v1?q=" +
             hotTopics + "&cx=007887247332676928493%3Aix05svhfpzm&key=AIzaSyBJrw0IM3bX1sGlbgH1Pwwbygf422fFx_M";
-        console.log(queryURL);
+
+        // console.log(queryURL);
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -56,15 +57,16 @@ $(document).ready(function () {
                         $volunteerListItem.append("<h5>Statement: "+volunteerSummary +"</h5>");
                     }
 
-                    var volunteerImage = volunteer.metatags[1].og:image;
+                    var volunteerImage = volunteer.pagemap.metatags[0]["og:image"];
                     var volunteerLink = volunteer.formattedUrl;
                     if(volunteerImage) {
-                        $volunteerListItem.append("<a href='" + volunteerLink + "'>" + "<img src='" + volunteerImage  +"'>"+ "</a>");
+                        $volunteerListItem.append("<a href='" + volunteerLink + "'>" + "<img style='width:200px; height:200px' src='" + volunteerImage  +"'>"+ "</a>");
 
 
                     }
 
                     $volunteerList.append($volunteerListItem);
+                    console.log(volunteer.pagemap.metatags[0]["og:image"])
 
                     // link, snippethtml, pagemap.metatags[og:description];[og:title];[og:street-address];[og:locality];[og:country-name];[og:image]
                 }
