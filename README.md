@@ -1,17 +1,17 @@
-
 # masterCaptain
+
 ## MVP Presentation
 
-# Legacy
+## Who is your target audience?
 
+- Our target audience is volunteers of different demographic groups who are willing to change the World and want be a part of large Non-Profit Organizations which are making the difference.
 
-  1. Who is your target audience?
-   * Group or inidvidual who want to search for volunteer opportunity
-  2. What is the problem that the product will address
-   * To match people interest with the volunteer  orgaization
-   * So that increase # of volunteers
-   * make volunteer easy to nevigate what's out there need to help
-  3. Identify and prioritize essential user stories (limit this to 3 or fewer)?
-    > a. As a user, I want the to be able to search volunteer that match my interest and location that I want to go.
-    > We going to have feture of search box for vlunteer API
-    > b. As a volunteer I want to see people photos of where they have been so as I could go to these places.
+## The goals of the product
+
+- To match people interests with the volunteer Organizations
+- Increase # of volunteers
+- Provide Volunteers with useful resource to plan a Volunteer Project
+
+## What is the problem that the product will address
+
+- The site will direct our customers and simplify the path of planning a Volunteer Project in order to safe time, energy and money and connect our customers with the right resources ( in our case with Non-Profit organizations).
