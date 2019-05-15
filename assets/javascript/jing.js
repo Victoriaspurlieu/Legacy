@@ -51,6 +51,8 @@ $(document).ready(function () {
                 
                     $volunteerList.append($volunteerListItem);
 
+                    
+
                     // link, snippethtml, pagemap.metatags[og:description];[og:title];[og:street-address];[og:locality];[og:country-name];[og:image]
                 }
 
