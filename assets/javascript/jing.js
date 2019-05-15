@@ -49,9 +49,22 @@ $(document).ready(function () {
                         "</strong>"
                     );
                 
-                    $volunteerList.append($volunteerListItem);
-
                     
+
+                    var volunteerSummary = volunteer.snippet;
+                    if(volunteerSummary){
+                        $volunteerListItem.append("<h5>Statement: "+volunteerSummary +"</h5>");
+                    }
+
+                    var volunteerImage = volunteer.metatags[1].og:image;
+                    var volunteerLink = volunteer.formattedUrl;
+                    if(volunteerImage) {
+                        $volunteerListItem.append("<a href='" + volunteerLink + "'>" + "<img src='" + volunteerImage  +"'>"+ "</a>");
+
+
+                    }
+
+                    $volunteerList.append($volunteerListItem);
 
                     // link, snippethtml, pagemap.metatags[og:description];[og:title];[og:street-address];[og:locality];[og:country-name];[og:image]
                 }
