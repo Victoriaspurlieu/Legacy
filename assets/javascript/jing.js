@@ -50,23 +50,52 @@ $(document).ready(function () {
                         "</strong>"
                     );
                 
-                    
-
-                    var volunteerSummary = volunteer.snippet;
-                    if(volunteerSummary){
-                        $volunteerListItem.append("<h5>Statement: "+volunteerSummary +"</h5>");
-                    }
-
-                    var volunteerImage = volunteer.pagemap.metatags[0]["og:image"];
                     var volunteerLink = volunteer.formattedUrl;
-                    if(volunteerImage) {
-                        $volunteerListItem.append("<a href='" + volunteerLink + "'>" + "<img style='width:200px; height:200px' src='" + volunteerImage  +"'>"+ "</a>");
 
+                    // If the item has snippet & link, log and append to volunteerList
+                    var volunteerSummary = volunteer.snippet;
+                    var volunteerLink = volunteer.formattedUrl;
+                    if(volunteerSummary && volunteerLink){
+                        $volunteerListItem.append("<h5>Statement: "+volunteerSummary +"</h5>");
+                        $volunteerListItem.append("<a href='" + volunteerLink + "'>"+volunteerLink+"</a>")
+                    }
+                   
+                    // If the item has image and website link, add the link to the image and append to volunteerList
+                    var volunteerImage = volunteer.pagemap.metatags[0]["og:image"];
+                    if(volunteerImage) {
+                        $volunteerListItem.append("<a style='float:left' href='" + volunteerLink + "'>" + "<img style='width:200px; height:200px' src='" + volunteerImage  +"'>"+ "</a>");
+
+                    }
+                   
+
+                    // If the item has description, log and append to volunteerList
+                    var volunteerOrgDes = volunteer.pagemap.metatags[0]["og:description"];
+                    if(volunteerOrgDes) {
+                        $volunteerListItem.append("<div >Description: "+volunteerOrgDes +"</div>");
 
                     }
 
+                   // location information 
+                    var address = volunteer.pagemap.metatags[0]["og:street-address"]
+                    var locality = volunteer.pagemap.metatags[0]["og:locality"]
+                    var region = volunteer.pagemap.metatags[0]["og:region"]
+                    var postalCode = volunteer.pagemap.metatags[0]["og:postal-code"]
+                    var country = volunteer.pagemap.metatags[0]["og:country-name"]
+
+                    if (address || locality || region || postalCode || country){
+                        $volunteerListItem.append("<h5>Location: </h5>");
+                        $volunteerListItem.append("<h5>"+address+"</h5>");
+                        $volunteerListItem.append("<h5>"+locality+","+region+" "+postalCode+"</h5>");
+                    }
+
+                    var latitude = volunteer.pagemap.metatags[0]["og:latitude"]
+                    var longitude = volunteer.pagemap.metatags[0]["og:longitude"]
+                    
+                    // append <li> to <ul>
                     $volunteerList.append($volunteerListItem);
                     console.log(volunteer.pagemap.metatags[0]["og:image"])
+
+
 
                     // link, snippethtml, pagemap.metatags[og:description];[og:title];[og:street-address];[og:locality];[og:country-name];[og:image]
                 }
