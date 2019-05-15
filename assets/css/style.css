@@ -45,3 +45,12 @@
 body {
   background-image: url('../imgs/bgb.png');
 }
+
+.carousel-inner{
+  max-width: 50%;
+  max-height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: block;
+}
