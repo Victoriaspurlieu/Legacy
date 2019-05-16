@@ -34,7 +34,10 @@ var nytSearch = "https://api.nytimes.com/svc/search/v2/articlesearch.json?&query
 var trendSpotterKey = "charity";
 
 var test = trendSpotter + trendSpotterKey;
+
+// DO NOT USE THIS KEY, ONLY USE FOR PRESENTATION . API HAS 100 SEARCH LIMIT per MONTH
 var backupKeyTrendspottr = "3bdb237763a5006354063055aa678cce";
+// DO NOT USE THIS KEY, ONLY USE FOR PRESENTATION . API HAS 100 SEARCH LIMIT per MONTH
 
 
 var queryURL = test;
