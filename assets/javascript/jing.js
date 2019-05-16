@@ -1,4 +1,16 @@
 $(document).ready(function() {
+
+  var randerNextPage = function(){
+  window.location.href = "hottopicsSearch.html?search=" + $("#hottopicSearch").val();
+  }
+$("#hottopicSearchBtn").on("click",randerNextPage)
+$("#hottopicSearch").on("keypress",function(event){
+  if (event.key === "Enter"){
+    randerNextPage()
+  }
+})
+
+
   $('#htSearch').on('click', function() {
     $('.volunteer-section').empty();
 

@@ -27,6 +27,16 @@
 
 
   <script src="../assets/javascript/jing.js"></script>
+  <script> 
+  $(document).ready(function() {
+  var urlParams = new URLSearchParams(window.location.search);
+
+  $("#hottopicSearch").val(urlParams.get('search'))
+  $("#htSearch").click();
+  
+  console.log(urlParams)
+  });
+  </script>
 </body>
 
 </html>
