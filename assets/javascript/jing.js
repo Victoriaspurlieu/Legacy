@@ -1,4 +1,16 @@
 
+var map;
+// Initialize and add the map
+function initMap() {
+    // The location of center US
+    var centerUS = { lat: 37.0902, lng: -95.7129 };
+    // The map, centered of US
+    map = new google.maps.Map(
+        document.getElementById('map'), { zoom: 4, center: centerUS });
+    // The marker, positioned at center US
+    // var marker = new google.maps.Marker({position: uluru, map: map});
+}
+
 
 
 $(document).ready(function () {
@@ -85,32 +97,36 @@ $(document).ready(function () {
 
 
                     if (address || locality || region || postalCode || country) {
-                        if (address) { 
-                        $volunteerListItem.append("<h5>Location: </h5>");
-                        $volunteerListItem.append("<h5>" + address + "</h5>");
+                        if (address) {
+                            $volunteerListItem.append("<h5>Location: </h5>");
+                            $volunteerListItem.append("<h5>" + address + "</h5>");
+                        }
+                        if (locality) {
+                            $volunteerListItem.append("<h5>" + locality + "</h5>");
+                        }
+                        if (region || postalCode) {
+                            $volunteerListItem.append("<h5>" + region + " " + postalCode + "</h5>");
+                        }
+                        if (country) {
+                            $volunteerListItem.append("<h5>" + country + "</h5>");
+                        }
                     }
-                    if (locality) {
-                        $volunteerListItem.append("<h5>" + locality + "</h5>");
-                    }
-                    if (region || postalCode) {
-                        $volunteerListItem.append("<h5>" + region +" " + postalCode + "</h5>");
-                    }
-                    if (country) {
-                        $volunteerListItem.append("<h5>" + country + "</h5>");
-                    }
+
+                    // set latitude and longtitude for each of search result
+                    var latitude = parseFloat(volunteer.pagemap.metatags[0]["og:latitude"]);
+                    var longitude = parseFloat(volunteer.pagemap.metatags[0]["og:longitude"]);
+                    var newMarker = { lat: latitude, lng: longitude };
+                    // make a maker of each search result on google map
+                    var marker = new google.maps.Marker({ position: newMarker, map: map });
+
+                    // append <li> to <ul>
+                    $volunteerList.append($volunteerListItem);
+                    console.log(volunteer.pagemap.metatags[0]["og:image"])
+
+
+
+                    // link, snippethtml, pagemap.metatags[og:description];[og:title];[og:street-address];[og:locality];[og:country-name];[og:image]
                 }
-
-                var latitude = volunteer.pagemap.metatags[0]["og:latitude"]
-                var longitude = volunteer.pagemap.metatags[0]["og:longitude"]
-
-                // append <li> to <ul>
-                $volunteerList.append($volunteerListItem);
-                console.log(volunteer.pagemap.metatags[0]["og:image"])
-
-
-
-                // link, snippethtml, pagemap.metatags[og:description];[og:title];[og:street-address];[og:locality];[og:country-name];[og:image]
-            }
 
 
 
@@ -118,8 +134,7 @@ $(document).ready(function () {
 
 
 
-})
-   
+    })
 
 
 
