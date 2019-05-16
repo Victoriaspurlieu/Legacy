@@ -22,14 +22,16 @@
   <!--The div element for the map -->
   <div id="map"></div>
   <br>
-  
 
-  <div class="col-7">
-    <input id="hottopicSearch" type="text" class="form-control" placeholder="Search Topics" />
+  <div class="form-row">
+    <div class="col-7">
+      <input id="hottopicSearch" type="text" class="form-control" placeholder="Search Topics" />
+    </div>
+    <div class="col">
+      <a id="htSearch" class="btn btn-danger btn-md" role="button">Search</a>
+    </div>
   </div>
-  <div class="col">
-    <a id="htSearch" class="btn btn-danger btn-md" href="#" role="button" id="searchBtn">Search</a>
-  </div>
+  <br>
 
   <div class="volunteer-section"></div>
 
@@ -40,15 +42,15 @@
 
 
   <script src="../assets/javascript/jing.js"></script>
-  <script> 
-  $(document).ready(function() {
-  var urlParams = new URLSearchParams(window.location.search);
+  <script>
+    $(document).ready(function () {
+      var urlParams = new URLSearchParams(window.location.search);
 
-  $("#hottopicSearch").val(urlParams.get('search'))
-  $("#htSearch").click();
-  
-  console.log(urlParams)
-  });
+      $("#hottopicSearch").val(urlParams.get('search'))
+      $("#htSearch").click();
+
+      console.log(urlParams)
+    });
   </script>
 </body>
 
