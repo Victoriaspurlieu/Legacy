@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 
     <!-- Link Firebase Here -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
   </head>
 
   <body>
@@ -117,54 +118,56 @@
     <!-- ------------------------------------------------------------------------------------ -->
 
     <!-- Display Volunteer Storues Card -->
-    <div class="container-fluid">
+    <div class="container">
       <h2>Volunteer Stories :</h2>
-      <!-- Card 1 -->
-      <div class="row">
-        <div class="col-1"></div>
+
+      <!-- user added stories area -->
+      <div class="row" id="usercard">
         <div class="col-3">
-          <div class="card" style="width: 18rem;">
-            <img src="../assets/imgs/img10.jpg" class="card-img-top" alt="..." />
+          <div class="card" style="width: 18rem; padding:20px;">
+            <!-- <img src="../assets/imgs/story02.jpg" class="card-img-top" alt="..." /> -->
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title">Add Your Story Here</h5>
+
+              <form role="form">
+                <div class="form-group row">
+                  <label for="name-input">Name:</label>
+                  <input class="form-control" id="name-input" type="text" />
+                </div>
+
+                <div class="form-group row">
+                  <label for="locationName-input">Volunteer In?</label>
+                  <input class="form-control" id="locationName-input" type="text" />
+                </div>
+
+                <div class="form-group row">
+                  <label for="story-input">Your Story: </label>
+                  <textarea class="form-control" id="story-input" rows="5"></textarea>
+                </div>
+              </form>
+              <button class="btn btn-primary" id="submitStory">Submit</button>
             </div>
           </div>
         </div>
-        <!-- Card 2 -->
-        <div class="col-3">
-          <div class="card" style="width: 18rem;">
-            <img src="../assets/imgs/img8.jpg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <!-- Card 3 -->
-        <div class="col-3">
-          <div class="card" style="width: 18rem;">
-            <img src="../assets/imgs/img9.jpg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-1"></div>
       </div>
     </div>
+    <br />
     <!-- ------------------------------------------------------------------------------ -->
     <hr />
     <!-- Footer -->
     <div class="card-body">
       <footer class="card-footer text-muted">Legacy : Copyright 2019</footer>
     </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- Link JavaScript Here -->
-    <script src="../assets/javascript/app.js"></script>
+
+    <script src="../assets/javascript/userStory.js"></script>
 
     <script src="../assets/javascript/jing.js"></script>
   </body>
