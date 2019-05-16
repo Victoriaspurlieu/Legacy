@@ -1,7 +1,7 @@
 //=======================================
 
 // Firebase configuration
-var firebaseConfig = {
+const firebaseConfig = {
   apiKey: 'AIzaSyCdgLnE4X5II0AUhLuW_N0JjUhRIYzmKmo',
   authDomain: 'legacy-9be16.firebaseapp.com',
   databaseURL: 'https://legacy-9be16.firebaseio.com',
@@ -13,8 +13,12 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-$('#submitStory').on('click', function() {
+var database = firebase.database();
+
+$('#submitStory').on('click', function(event) {
   event.preventDefault();
+
+  //grab the user input
   var userName = $('#name-input')
     .val()
     .trim();
@@ -27,41 +31,76 @@ $('#submitStory').on('click', function() {
     .val()
     .trim();
 
-  $('#userName').text(userName);
+  var randomImg = Math.floor(Math.random() * 3);
+  console.log(randomImg);
+  // Creates local "temporary" object for holding user data
 
-  $('#volunteerLocation').text(locationName);
+  var newStory = {
+    Name: userName,
+    VolunteerLocation: locationName,
+    Story: story,
+    AveterImageNum: randomImg
+  };
 
-  $('#userStory').text(story);
+  // Uploads employee data to the database
+  database.ref().push(newStory);
+
+  // Clears all of the text-boxes
+  $('#name-input').val('');
+  $('#locationName-input').val('');
+  $('#story-input').val('');
 });
-// on click function get the still gifs
 
-// $('#searchBtn').on('click', function(event) {
-//   event.preventDefault();
+// 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
 
-//   // set Api request
+database.ref().on('child_added', function(childSanpshot) {
+  // Store everything into a variable.
 
-// var appKey = 'oXJZmXZRMdr0XbDbiyPd0y0AfikCWfYo';
-// var queryURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20180101&end_date=20190501&fq=volunteer&q=volunteer+works&sort=relevance&api-key=' + appKey;
+  //1. store img
 
-// $.ajax({
-//   url: queryURL,
-//   method: 'GET'
-// }).then(function(response) {
-//   console.log(response);
-//   console.log(response.response.docs[4]);
+  var userAdverter = $('<img>').attr('style', 'width: 100px;');
+  userAdverter.attr('src', '../assets/imgs/Asset' + childSanpshot.val().AveterImageNum + '.png');
 
-//   var storyImg = response.response.docs[4].multimedia[18].url;
+  //2. store name and location of volunteer
+  var userName = $('<h5>').text(childSanpshot.val().Name);
+  var locationName = $('<p>').text(childSanpshot.val().VolunteerLocation);
 
-//   var title = response.response.docs[4].headline.main;
+  //3. store user story
+  var userStory;
+  var wordlength = childSanpshot.val().Story.length;
 
-//   var summaryText = response.response.docs[4].abstract;
+  var colDiv = $('<div>')
+    .addClass('col-3')
+    .attr('id', 'storyDiv');
 
-//   console.log(storyImg);
+  var cardDiv = $('<div>')
+    .addClass('card')
+    .attr('style', 'width: 18rem; padding:20px');
 
-//   // append the result
-//   //$('.card').html('<img src =' + storyImg);
+  if (wordlength < 250) {
+    userStory = $('<p>').text(childSanpshot.val().Story);
 
-//   $('.card-title').text(title);
+    cardDiv.append(userAdverter, userName, locationName, userStory);
+  } else {
+    var readMoreBtn = $('<buttom>')
+      .addClass('btn btn-primary')
+      .attr('type', 'button')
+      .attr('data-toggle', 'popover')
+      .attr('title', childSanpshot.val().Name)
+      .attr('data-content', childSanpshot.val().Story);
 
-//   $('.card-text').text(summaryText);
-// });
+    readMoreBtn.text('Read More Here');
+
+    $(function() {
+      $('[data-toggle="popover"]').popover();
+    });
+
+    userStory = $('<p>').text(childSanpshot.val().Story.substr(0, 240) + '......');
+
+    cardDiv.append(userAdverter, userName, locationName, userStory, readMoreBtn);
+  }
+
+  colDiv.append(cardDiv);
+
+  $('#usercard').prepend(colDiv);
+});
