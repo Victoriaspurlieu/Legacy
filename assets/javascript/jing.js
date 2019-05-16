@@ -7,8 +7,6 @@ function initMap() {
     // The map, centered of US
     map = new google.maps.Map(
         document.getElementById('map'), { zoom: 4, center: centerUS });
-    // The marker, positioned at center US
-    // var marker = new google.maps.Marker({position: uluru, map: map});
 }
 
 
@@ -124,8 +122,6 @@ $(document).ready(function () {
                     console.log(volunteer.pagemap.metatags[0]["og:image"])
 
 
-
-                    // link, snippethtml, pagemap.metatags[og:description];[og:title];[og:street-address];[og:locality];[og:country-name];[og:image]
                 }
 
 
