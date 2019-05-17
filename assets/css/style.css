@@ -35,27 +35,25 @@ body {
   background-image: url('../imgs/bgb.png');
 }
 
-<<<<<<< HEAD
-.carousel-inner{
+.carousel-inner {
   max-width: 50%;
   max-height: 300px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   display: block;
-=======
-.form-control{  
+}
+.form-control {
   margin-left: 5px;
 }
 
-#brand{
+#brand {
   font-family: 'Major Mono Display', monospace;
   font-size: 25px;
 }
-#password{
-  margin-right:5px;
+#password {
+  margin-right: 5px;
 }
-#loginbtn{
- background-color: rgb(245, 245, 142);
->>>>>>> master
+#loginbtn {
+  background-color: rgb(245, 245, 142);
 }
