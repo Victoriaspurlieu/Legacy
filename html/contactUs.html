@@ -4,7 +4,6 @@
     <!--  meta tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <title>Contact Us</title>
 
@@ -18,7 +17,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   </head>
   <body>
-    <!-- nav bar -->
+    <!-- nav bar ---------------------------------------->
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
       <a class="navbar-brand" href="index.html">Legacy</a>
 
@@ -31,7 +30,7 @@
           </li>
         </ul>
 
-        <!-- User input Log in form -->
+        <!-- User input Log in form ---------------------------------------->
         <form class="form-inline my-2 my-lg-0">
           <button class="btn bg-warning btn-outline-dark my-2 my-sm-0" type="submit"><i class="fas fa-heart"></i></button>
           <form id="signin" class="navbar-form navbar-right" role="form">
@@ -55,29 +54,30 @@
 
     <div class="container" style="max-width: 785px">
       <h3>Contact Us</h3>
-      <form>
-        <div class="row">
-          <div class="col">
-            <input type="text" class="form-control" placeholder="First name" />
-          </div>
-          <div class="col">
-            <input type="text" class="form-control" placeholder="Last name" />
-          </div>
+
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="First name" />
         </div>
-        <br />
-        <div class="row">
-          <div class="form-group col">
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Email" />
-          </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Last name" />
         </div>
-        <div class="row">
-          <div class="form-group col">
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" placeholder="Comment"></textarea>
-          </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="form-group col">
+          <input type="email" class="form-control" id="inputEmail" placeholder="Email" />
         </div>
-        <button type="submit" class="btn btn-warning btn-lg btn-block" id="contactUsBtn">Submit</button>
-      </form>
+      </div>
+      <div class="row">
+        <div class="form-group col">
+          <textarea class="form-control" id="Textarea1" rows="8" placeholder="Comment"></textarea>
+        </div>
+      </div>
+      <button onclick="seweetAlertClick()" type="submit" class="btn btn-warning btn-lg btn-block" id="contactUsBtn">Submit</button>
     </div>
+
+    <!-- ---------------------------------------------- -->
     <hr />
     <!-- Footer -->
     <div class="card-body text-center">
@@ -87,7 +87,19 @@
     <!-- Link Jquery Here -->
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
 
-    <!-- Link JaveScript Here -->
-    <script src="../assets/javascript/contactus.js"></script>
+    <!-- add sweet Alert js -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+    <script>
+      function seweetAlertClick() {
+        Swal.fire({
+          position: 'center',
+          type: 'success',
+          title: 'Thank You for Contacting Us',
+          showConfirmButton: false,
+          timer: 3000
+        });
+      }
+    </script>
   </body>
 </html>
