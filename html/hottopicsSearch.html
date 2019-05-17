@@ -28,25 +28,32 @@
   <body>
     <!-- nav bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-      <a class="navbar-brand" href="#">Legacy</a>
+      <a class="navbar-brand" href="index.html">Legacy</a>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Contact Us <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="contactUs.html">Contact Us </a>
           </li>
         </ul>
 
+        <!-- User input Log in form -->
         <form class="form-inline my-2 my-lg-0">
           <button class="btn bg-warning btn-outline-dark my-2 my-sm-0" type="submit"><i class="fas fa-heart"></i></button>
+          <form id="signin" class="navbar-form navbar-right" role="form">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input id="email" type="email" class="form-control" name="email" value="" placeholder="Email Address" />
+            </div>
 
-          <button class="btn bg-info btn-outline-dark my-2 my-sm-0" type="submit">Login</button>
-
-          <button class="btn bg-danger btn-outline-dark my-2 my-sm-0" type="submit">Sign Up</button>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input id="password" type="password" class="form-control" name="password" value="" placeholder="Password" />
+            </div>
+            <button id="UserLogin" type="button" class="btn btn-outline-warning">Log in</button>
+          </form>
         </form>
       </div>
     </nav>
@@ -66,6 +73,12 @@
     <br />
 
     <div class="volunteer-section"></div>
+
+    <hr />
+    <!-- Footer -->
+    <div class="card-body text-center">
+      <footer class="card-footer text-muted">Legacy : Copyright 2019</footer>
+    </div>
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJrw0IM3bX1sGlbgH1Pwwbygf422fFx_M&callback=initMap"></script>
 
