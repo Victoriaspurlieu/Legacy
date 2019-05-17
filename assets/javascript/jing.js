@@ -73,21 +73,19 @@ $(document).ready(function () {
                     $volunteerListItem.append(
                         "<span class='label label-primary'>" +
                         volunteerCount +
-                        "</span>" +
-
                         "<strong> " +
                         volunteerTitle +
-                        "</strong>"
+                        "</strong>" +
+                        "</span>" + "<br>"+"<br>"
                     );
 
-                    var volunteerLink = volunteer.formattedUrl;
 
                     // If the item has snippet & link, log and append to volunteerList
                     var volunteerSummary = volunteer.snippet;
                     var volunteerLink = volunteer.formattedUrl;
-                    if (volunteerSummary && volunteerLink) {
-                        $volunteerListItem.append("<h5>Statement: " + volunteerSummary + "</h5>");
-                        $volunteerListItem.append("<a href='" + volunteerLink + "'>" + volunteerLink + "</a>")
+                    
+                    if (volunteerSummary) {
+                        $volunteerListItem.append("<h5 class='statement'>Statement: " + volunteerSummary + "</h5>");
                     }
 
                     // If the item has image and website link, add the link to the image and append to volunteerList
@@ -101,7 +99,7 @@ $(document).ready(function () {
                     // If the item has description, log and append to volunteerList
                     var volunteerOrgDes = volunteer.pagemap.metatags[0]["og:description"];
                     if (volunteerOrgDes) {
-                        $volunteerListItem.append("<div >Description: " + volunteerOrgDes + "</div>");
+                        $volunteerListItem.append("<div class= 'description'> " + volunteerOrgDes + "</div>");
 
                     }
 
@@ -129,6 +127,12 @@ $(document).ready(function () {
                             $volunteerListItem.append("<h5>" + country + "</h5>");
                         }
                     }
+  
+                        // add a link.
+                        if (volunteerLink) {
+                            $volunteerListItem.append("<div class=link-action>"+"<a href='" + volunteerLink + "'>" + "THIS IS A LINK" + "</a>"+"</div>")
+                        }
+                    
 
 
                     // append <li> to <ul>
@@ -156,7 +160,8 @@ $(document).ready(function () {
 
 
                 }
-
+            
+                
 
 
             })
