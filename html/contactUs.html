@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--  meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Contact Us</title>
+
+    <!-- Link Bootstrao CSS Here -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+    <!-- Link CSS style Here -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <!-- Link Font Awsome Here -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  </head>
+  <body>
+    <!-- nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+      <a class="navbar-brand" href="#">Legacy</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Contact Us <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+
+        <!-- User input Log in form -->
+        <form class="form-inline my-2 my-lg-0">
+          <button class="btn bg-warning btn-outline-dark my-2 my-sm-0" type="submit"><i class="fas fa-heart"></i></button>
+          <form id="signin" class="navbar-form navbar-right" role="form">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input id="email" type="email" class="form-control" name="email" value="" placeholder="Email Address" />
+            </div>
+
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input id="password" type="password" class="form-control" name="password" value="" placeholder="Password" />
+            </div>
+            <button id="UserLogin" type="button" class="btn btn-outline-warning">Log in</button>
+          </form>
+        </form>
+      </div>
+    </nav>
+    <!-- -------------------------------------------------------------------------------------- -->
+  </body>
+</html>
