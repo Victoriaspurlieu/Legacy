@@ -54,37 +54,57 @@
     <!-- -------------------------------------------------------------------------------------- -->
 
     <!-- Jubotron -->
-    <div class="jumbotron">
-      <h1 class="display-4">This is your Legacy..</h1>
-      <p class="lead">We need voluteers :</p>
+    <div class="jumbotron container-fluid">
+      <h3 class="display-4">This is your Legacy...</h3>
       <!-- ---------------------------------------------------------------------------- -->
-      <!-- Search for volunteer opportunity by topic and location -->
+      <!-- Topic Carousel------------------------------------------ -->
+      <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div id="trendingTopic1"></div>
+            <div class="carousel-caption d-none d-md-block">
+              <h5 id="hashtag1">?</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div id="trendingTopic2"></div>
+            <div class="carousel-caption d-none d-md-block">
+              <h5 id="hashtag2">?2</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div id="trendingTopic3"></div>
+            <div class="carousel-caption d-none d-md-block">
+              <h5 id="hashtag3">?3</h5>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
 
+      <img id="test" />
+
+      <!-- Search for volunteer opportunity by topic and location -->
       <div class="form-row ">
         <div class="col-7">
-          <input id="hottopicSearch" type="text" class="form-control" placeholder="Search Topics" />
+          <input id="hottopicSearch" type="text" class="form-control" placeholder="Search Your Voulunteer Topics" />
         </div>
 
-    <div class="col">
-      <a class="btn btn-danger btn-md" id="hottopicSearchBtn" role="button">Search</a>
-    </div>
-  </div>
-  <hr class="my-4" />
-
-  <br />
-  <!-- Search by Locations -->
-
-  <form>
-    <h5>Search for volunteer opportunities by locations :</h5>
-    <div class="form-row">
-      <div class="col-7">
-        <input type="text" class="form-control" placeholder="Country" />
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="City" />
-      </div>
-      <div class="col">
-        <a class="btn btn-success btn-md" href="#" role="button" id="submitSearchBtn">Submit</a>
+        <div class="col">
+          <a class="btn btn-danger btn-md" id="hottopicSearchBtn" role="button">Search</a>
+        </div>
       </div>
 
       <br />
@@ -120,14 +140,12 @@
               </form>
               <button class="btn btn-warning" id="submitStory">Submit</button>
             </div>
-          </form>
-          <button class="btn btn-primary" id="submitStory">Submit</button>
+          </div>
         </div>
       </div>
     </div>
     <br />
     <!-- ------------------------------------------------------------------------------ -->
-   
 
     <hr />
     <!-- Footer -->
@@ -143,12 +161,15 @@
 
     <!-- Link bootstrap js -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
     <!-- Link JavaScript Here -->
 
-<script src="../assets/javascript/userStory.js"></script>
+    <script src="../assets/javascript/userStory.js"></script>
 
-<script src="../assets/javascript/jing.js"></script>
+    <script src="../assets/javascript/jing.js"></script>
 
-<script src="../assets/javascript/app.js"></script>
-</body>
+    <script src="../assets/javascript/app.js"></script>
+
+    <script src="../assets/javascript/imageApiInCarousel.js"></script>
+  </body>
 </html>

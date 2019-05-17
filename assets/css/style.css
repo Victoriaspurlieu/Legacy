@@ -35,17 +35,29 @@ body {
   background-image: url('../imgs/bgb.png');
 }
 
-.form-control{  
+.carousel-inner {
+  max-width: 50%;
+  max-height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: block;
+}
+.form-control {
   margin-left: 5px;
 }
 
-#brand{
+#brand {
   font-family: 'Major Mono Display', monospace;
   font-size: 25px;
 }
-#password{
-  margin-right:5px;
+#password {
+  margin-right: 5px;
 }
+#loginbtn {
+  background-color: rgb(245, 245, 142);
+}
+<<<<<<< HEAD
 #loginbtn{
  background-color: rgb(245, 245, 142);
 }
@@ -109,3 +121,5 @@ address div{
 
 
 
+=======
+>>>>>>> master
