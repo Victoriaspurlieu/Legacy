@@ -50,15 +50,30 @@ body {
  background-color: rgb(245, 245, 142);
 }
 
+
+/* hottopicSearch HTML */
+
+container{
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
 .list-group{
   width: 50%;
   margin-bottom: 15px !important;
+  float: left;
+  padding: 10px 10px 10px 10px !important;
+  margin: auto;
+  height: 500px;
+ 
 
 }
 
 .label-primary{
   font-family: 'Lato', sans-serif;
   font-size: 25px;
+
 }
 
 .statement{
@@ -83,14 +98,14 @@ body {
 
 }
 
-h6{
+address div{
   font-family: 'Roboto', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   font-style: italic;
-  color: rgb(7, 7, 75);
-  size: 13px;
+  color:rgb(3, 78, 3);
 
 }
+
 
 
 

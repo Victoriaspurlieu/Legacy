@@ -99,7 +99,7 @@ $(document).ready(function () {
                     // If the item has description, log and append to volunteerList
                     var volunteerOrgDes = volunteer.pagemap.metatags[0]["og:description"];
                     if (volunteerOrgDes) {
-                        $volunteerListItem.append("<div class= 'description'> " + volunteerOrgDes + "</div>");
+                        $volunteerListItem.append("<div class= 'description'> " + volunteerOrgDes + "</div>"+ "<br>");
 
                     }
 
@@ -114,17 +114,17 @@ $(document).ready(function () {
                     var addressLayout = $("<address>");
                     if (address || locality || region || postalCode || country) {
                         if (address) {
-                            addressLayout.append("<h6>Visit us at: </h6>");
-                            addressLayout.append("<h6>" + address + "</h6>");
+                            addressLayout.append("<div>Visit us at: </div>");
+                            addressLayout.append("<div>" + address + "</div>");
                         }
                         if (locality) {
-                            addressLayout.append("<h6>" + locality + "</h6>");
+                            addressLayout.append("<div>" + locality + "</div>");
                         }
                         if (region || postalCode) {
-                            addressLayout.append("<h6>" + region + " " + postalCode + "</h6>");
+                            addressLayout.append("<div>" + region + " " + postalCode + "</div>");
                         }
                         if (country) {
-                            addressLayout.append("<h6>" + country + "</h6>");
+                            addressLayout.append("<div>" + country + "</div>");
                         }
                     }
 
