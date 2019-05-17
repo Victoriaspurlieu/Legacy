@@ -37,7 +37,7 @@ $(document).ready(function () {
 
 
     function displayHottopicSearch() {
-        $('.volunteer-section').empty();
+        $('#volunteer-section').empty();
 
         var hotTopics = $("#hottopicSearch").val().trim();
 
@@ -160,7 +160,7 @@ $(document).ready(function () {
 
 
             })
-
-
+     
+            $("#hottopicSearch").val("");
     }
 });

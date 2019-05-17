@@ -1,167 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Legacy :</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Link Bootstrao CSS Here -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<head>
+  <title>Legacy :</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Link CSS style Here -->
-    <link rel="stylesheet" href="../assets/css/style.css" />
+  <!-- Link Bootstrao CSS Here -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 
-    <!-- link JQuery min -->
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+  <!-- Link CSS style Here -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
 
-    <!-- Link Font Awsome Here -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <!-- link JQuery min -->
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
 
-    <!-- Link Firebase Here -->
-    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
-  </head>
+  <!-- Link Font Awsome Here -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 
-  <body>
-    <!-- nav bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-      <a class="navbar-brand" href="#">Legacy</a>
+  <!-- Link Firebase Here -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+</head>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<body>
+  <!-- nav bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <a class="navbar-brand" href="#">Legacy</a>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item active donate">
-            <a class="nav-link donate" href="#">Donate <span class="sr-only">(current)</span></a>
-          </li>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Contact Us <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              My Account
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        </ul>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active donate">
+          <a class="nav-link donate" href="#">Donate <span class="sr-only">(current)</span></a>
+        </li>
 
-        <form class="form-inline my-2 my-lg-0">
-          <button class="btn bg-warning btn-outline-dark my-2 my-sm-0" type="submit"><i class="fas fa-heart"></i></button>
-          <button class="btn bg-danger btn-outline-dark my-2 my-sm-0" type="submit"><i class="fas fa-star"></i></button>
-          <button class="btn bg-info btn-outline-dark my-2 my-sm-0" type="submit">Login</button>
-        </form>
-      </div>
-    </nav>
-    <!-- -------------------------------------------------------------------------------------- -->
-
-    <!-- Jubotron -->
-    <div class="jumbotron">
-      <h1 class="display-4">This is your Legacy..</h1>
-      <p class="lead">We need voluteers :</p>
-      <img class="img1" src="../assets/imgs/img1.jpg" />
-      <img class="img1" src="../assets/imgs/img2.jpg" />
-      <img class="img1" src="../assets/imgs/img3.jpg" />
-      <img class="img1" src="../assets/imgs/img4.jpg" />
-      <img class="img1" src="../assets/imgs/img5.jpg" />
-
-      <!-- Search for volunteer opportunity by topic -->
-
-      <div class="form-row">
-        <div class="col-7">
-          <input id="hottopicSearch" type="text" class="form-control" placeholder="Search Topics" />
-        </div>
-        
-        <div class="col">
-          <a class="btn btn-danger btn-md" id="hottopicSearchBtn" role="button">Search</a>
-        </div>
-      </div>
-      <hr class="my-4" />
-
-      <br />
-      <!-- Search by Locations -->
-
-      <form>
-        <h5>Search for volunteer opportunities by locations :</h5>
-        <div class="form-row">
-          <div class="col-7">
-            <input type="text" class="form-control" placeholder="Country" />
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Contact Us <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            My Account
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
           </div>
-          <div class="col">
-            <input type="text" class="form-control" placeholder="City" />
-          </div>
-          <div class="col">
-            <a class="btn btn-success btn-md" href="#" role="button" id="submitSearchBtn">Submit</a>
-          </div>
-        </div>
+        </li>
+      </ul>
+
+      <form class="form-inline my-2 my-lg-0">
+        <button class="btn bg-warning btn-outline-dark my-2 my-sm-0" type="submit"><i class="fas fa-heart"></i></button>
+        <button class="btn bg-danger btn-outline-dark my-2 my-sm-0" type="submit"><i class="fas fa-star"></i></button>
+        <button class="btn bg-info btn-outline-dark my-2 my-sm-0" type="submit">Login</button>
       </form>
     </div>
-    <!-- ------------------------------------------------------------------------------------ -->
+  </nav>
+  <!-- -------------------------------------------------------------------------------------- -->
 
-    <!-- Display Volunteer Storues Card -->
-    <div class="container">
-      <h2>Volunteer Stories :</h2>
+  <!-- Jubotron -->
+  <div class="jumbotron">
+    <h1 class="display-4">This is your Legacy..</h1>
+    <p class="lead">We need voluteers :</p>
+    <img class="img1" src="../assets/imgs/img1.jpg" />
+    <img class="img1" src="../assets/imgs/img2.jpg" />
+    <img class="img1" src="../assets/imgs/img3.jpg" />
+    <img class="img1" src="../assets/imgs/img4.jpg" />
+    <img class="img1" src="../assets/imgs/img5.jpg" />
 
-      <!-- user added stories area -->
-      <div class="row" id="usercard">
-        <div class="col-3">
-          <div class="card" style="width: 18rem; padding:20px;">
-            <div class="card-body">
-              <h5 class="card-title">Add Your Story Here</h5>
+    <!-- Search for volunteer opportunity by topic -->
 
-              <form role="form">
-                <div class="form-group row">
-                  <label for="name-input">Name:</label>
-                  <input class="form-control" id="name-input" type="text" />
-                </div>
+    <div class="form-row">
+      <div class="col-7">
+        <input id="hottopicSearch" type="text" class="form-control" placeholder="Search Topics" />
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="City" />
+      </div>
 
-                <div class="form-group row">
-                  <label for="locationName-input">Volunteer In?</label>
-                  <input class="form-control" id="locationName-input" type="text" />
-                </div>
+      <div class="col">
+        <a class="btn btn-danger btn-md" id="hottopicSearchBtn" role="button">Search</a>
+      </div>
 
-                <div class="form-group row">
-                  <label for="story-input">Your Story: </label>
-                  <textarea class="form-control" id="story-input" rows="5"></textarea>
-                </div>
-              </form>
-              <button class="btn btn-primary" id="submitStory">Submit</button>
-            </div>
+
+    </div>
+    <hr class="my-4" />
+
+    <br />
+    <!-- Search by Locations -->
+
+  </div>
+  <!-- ------------------------------------------------------------------------------------ -->
+
+  <!-- Display Volunteer Storues Card -->
+  <div class="container">
+    <h2>Volunteer Stories :</h2>
+
+    <!-- user added stories area -->
+    <div class="row" id="usercard">
+      <div class="col-3">
+        <div class="card" style="width: 18rem; padding:20px;">
+          <div class="card-body">
+            <h5 class="card-title">Add Your Story Here</h5>
+
+            <form role="form">
+              <div class="form-group row">
+                <label for="name-input">Name:</label>
+                <input class="form-control" id="name-input" type="text" />
+              </div>
+
+              <div class="form-group row">
+                <label for="locationName-input">Volunteer In?</label>
+                <input class="form-control" id="locationName-input" type="text" />
+              </div>
+
+              <div class="form-group row">
+                <label for="story-input">Your Story: </label>
+                <textarea class="form-control" id="story-input" rows="5"></textarea>
+              </div>
+            </form>
+            <button class="btn btn-primary" id="submitStory">Submit</button>
           </div>
         </div>
       </div>
     </div>
-    <br />
-    <!-- ------------------------------------------------------------------------------ -->
-    <!-- Display volunteer news -->
-    <div class="container"></div>
+  </div>
+  <br />
+  <!-- ------------------------------------------------------------------------------ -->
+  <!-- Display volunteer news -->
+  <div class="container"></div>
 
-    <hr />
-    <!-- Footer -->
-    <div class="card-body text-center">
-      <footer class="card-footer text-muted">Legacy : Copyright 2019</footer>
-    </div>
+  <hr />
+  <!-- Footer -->
+  <div class="card-body text-center">
+    <footer class="card-footer text-muted">Legacy : Copyright 2019</footer>
+  </div>
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <!-- Link JavaScript Here -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <!-- Link JavaScript Here -->
 
-    <script src="../assets/javascript/userStory.js"></script>
+  <script src="../assets/javascript/userStory.js"></script>
 
-    <script src="../assets/javascript/jing.js"></script>
-  </body>
+  <script src="../assets/javascript/jing.js"></script>
+</body>
+
 </html>
