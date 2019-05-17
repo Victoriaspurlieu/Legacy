@@ -45,3 +45,18 @@
 body {
   background-image: url('../imgs/bgb.png');
 }
+
+.form-control{  
+  margin-left: 5px;
+}
+
+#brand{
+  font-family: 'Major Mono Display', monospace;
+  font-size: 25px;
+}
+#password{
+  margin-right:5px;
+}
+#loginbtn{
+ background-color: rgb(245, 245, 142);
+}
