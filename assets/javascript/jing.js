@@ -85,13 +85,13 @@ $(document).ready(function () {
                     var volunteerLink = volunteer.formattedUrl;
                     
                     if (volunteerSummary) {
-                        $volunteerListItem.append("<h5 class='statement'>Statement: " + volunteerSummary + "</h5>");
+                        $volunteerListItem.append("<h5 class='statement'>Statement: " + volunteerSummary + "</h5>"+"<br>");
                     }
 
                     // If the item has image and website link, add the link to the image and append to volunteerList
                     var volunteerImage = volunteer.pagemap.metatags[0]["og:image"];
                     if (volunteerImage) {
-                        $volunteerListItem.append("<a style='float:left' href='" + volunteerLink + "'>" + "<img style='width:200px; height:200px' src='" + volunteerImage + "'>" + "</a>");
+                        $volunteerListItem.append("<a style='float:left' href='" + volunteerLink + "'target='_blank'>" + "<img style='width:200px; height:200px;border: 1px solid #ddd;border-radius: 4px;padding: 10px;' src='" + volunteerImage + "'>" + "</a>");
 
                     }
 
@@ -110,27 +110,29 @@ $(document).ready(function () {
                     var postalCode = volunteer.pagemap.metatags[0]["og:postal-code"]
                     var country = volunteer.pagemap.metatags[0]["og:country-name"]
 
-
-
+                    
+                    var addressLayout = $("<address>");
                     if (address || locality || region || postalCode || country) {
                         if (address) {
-                            $volunteerListItem.append("<h5>Location: </h5>");
-                            $volunteerListItem.append("<h5>" + address + "</h5>");
+                            addressLayout.append("<h6>Visit us at: </h6>");
+                            addressLayout.append("<h6>" + address + "</h6>");
                         }
                         if (locality) {
-                            $volunteerListItem.append("<h5>" + locality + "</h5>");
+                            addressLayout.append("<h6>" + locality + "</h6>");
                         }
                         if (region || postalCode) {
-                            $volunteerListItem.append("<h5>" + region + " " + postalCode + "</h5>");
+                            addressLayout.append("<h6>" + region + " " + postalCode + "</h6>");
                         }
                         if (country) {
-                            $volunteerListItem.append("<h5>" + country + "</h5>");
+                            addressLayout.append("<h6>" + country + "</h6>");
                         }
                     }
+
+                    $volunteerListItem.append(addressLayout);
   
                         // add a link.
                         if (volunteerLink) {
-                            $volunteerListItem.append("<div class=link-action>"+"<a href='" + volunteerLink + "'>" + "THIS IS A LINK" + "</a>"+"</div>")
+                            $volunteerListItem.append("<br>"+"<div class=link-action>"+"<a href='" + volunteerLink + "'target='_blank'>" + "THIS IS A LINK" + "</a>"+"</div>")
                         }
                     
 

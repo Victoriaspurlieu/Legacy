@@ -58,12 +58,12 @@ body {
 
 .label-primary{
   font-family: 'Lato', sans-serif;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .statement{
   font-family: 'Roboto', sans-serif;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .link-action {
@@ -79,6 +79,18 @@ body {
 
 .description{
   font-family: 'Roboto', sans-serif;
-  font-size: 15px;
+  font-size: 18px;
 
 }
+
+h6{
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-style: italic;
+  color: rgb(7, 7, 75);
+  size: 13px;
+
+}
+
+
+
