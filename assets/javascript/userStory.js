@@ -70,7 +70,7 @@ $(document).ready(function() {
     var wordlength = childSanpshot.val().Story.length;
 
     var colDiv = $('<div>')
-      .addClass('col-3')
+      .addClass('md-col-3')
       .attr('id', 'storyDiv');
 
     var cardDiv = $('<div>')
