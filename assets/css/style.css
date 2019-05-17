@@ -49,3 +49,9 @@ body {
 #loginbtn{
  background-color: rgb(245, 245, 142);
 }
+
+.list-group{
+  width: 33%;
+  margin-bottom: 15px !important;
+
+}
