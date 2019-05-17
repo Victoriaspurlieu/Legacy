@@ -1,4 +1,3 @@
-//=======================================
 $(document).ready(function() {
   // Firebase configuration
   const firebaseConfig = {
@@ -31,7 +30,7 @@ $(document).ready(function() {
       .val()
       .trim();
 
-    var randomImg = Math.floor(Math.random() * 3);
+    var randomImg = Math.floor(Math.random() * 6);
     console.log(randomImg);
     // Creates local "temporary" object for holding user data
 
@@ -63,14 +62,14 @@ $(document).ready(function() {
 
     //2. store name and location of volunteer
     var userName = $('<h5>').text(childSanpshot.val().Name);
-    var locationName = $('<p>').text(childSanpshot.val().VolunteerLocation);
+    var locationName = $('<p>').html('<i>' + childSanpshot.val().VolunteerLocation + '</i>');
 
     //3. store user story
     var userStory;
     var wordlength = childSanpshot.val().Story.length;
 
     var colDiv = $('<div>')
-      .addClass('col-3')
+      .addClass('col3')
       .attr('id', 'storyDiv');
 
     var cardDiv = $('<div>')
@@ -83,7 +82,7 @@ $(document).ready(function() {
       cardDiv.append(userAdverter, userName, locationName, userStory);
     } else {
       var readMoreBtn = $('<buttom>')
-        .addClass('btn btn-primary')
+        .addClass('btn btn-warning')
         .attr('type', 'button')
         .attr('data-toggle', 'popover')
         .attr('title', childSanpshot.val().Name)

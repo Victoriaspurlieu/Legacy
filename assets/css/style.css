@@ -11,13 +11,6 @@
   background-size: cover;
 }
 
-.navbar.navbar-expand-lg.navbar-light.bg-info {
-  background-image: url('.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .color {
   color: white;
 }
@@ -26,10 +19,6 @@
   height: 250px;
   width: 31%;
   margin: 10px;
-}
-
-.nav-link.donate {
-  color: green;
 }
 
 .card {

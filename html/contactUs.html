@@ -1,30 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!--  meta tags -->
     <meta charset="UTF-8" />
-    <title>VolunteerSearch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <!-- Link CSS style Here -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+    <title>Contact Us</title>
 
     <!-- Link Bootstrao CSS Here -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 
-    <!-- JQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Link CSS style Here -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
 
     <!-- Link Font Awsome Here -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-
-    <style>
-      #map {
-        width: 100%;
-        height: 300px;
-        background-color: grey;
-      }
-    </style>
   </head>
-
   <body>
     <!-- nav bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
@@ -57,41 +49,45 @@
         </form>
       </div>
     </nav>
-    <h3>My Google Maps Demo</h3>
-    <!--The div element for the map -->
-    <div id="map"></div>
-    <br />
+    <!-- -------------------------------------------------------------------------------------- -->
 
-    <div class="form-row">
-      <div class="col-7">
-        <input id="hottopicSearch" type="text" class="form-control" placeholder="Search Topics" />
-      </div>
-      <div class="col">
-        <a id="htSearch" class="btn btn-danger btn-md" role="button">Search</a>
-      </div>
+    <br /><br />
+
+    <div class="container" style="max-width: 785px">
+      <h3>Contact Us</h3>
+      <form>
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="First name" />
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Last name" />
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="form-group col">
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Email" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" placeholder="Comment"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-warning btn-lg btn-block" id="contactUsBtn">Submit</button>
+      </form>
     </div>
-    <br />
-
-    <div class="volunteer-section"></div>
-
     <hr />
     <!-- Footer -->
     <div class="card-body text-center">
       <footer class="card-footer text-muted">Legacy : Copyright 2019</footer>
     </div>
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJrw0IM3bX1sGlbgH1Pwwbygf422fFx_M&callback=initMap"></script>
+    <!-- Link Jquery Here -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
 
-    <script src="../assets/javascript/jing.js"></script>
-    <script>
-      $(document).ready(function() {
-        var urlParams = new URLSearchParams(window.location.search);
-
-        $('#hottopicSearch').val(urlParams.get('search'));
-        $('#htSearch').click();
-
-        console.log(urlParams);
-      });
-    </script>
+    <!-- Link JaveScript Here -->
+    <script src="../assets/javascript/contactus.js"></script>
   </body>
 </html>
