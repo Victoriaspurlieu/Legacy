@@ -31,7 +31,7 @@ $(document).ready(function() {
       .val()
       .trim();
 
-    var randomImg = Math.floor(Math.random() * 3);
+    var randomImg = Math.floor(Math.random() * 6);
     console.log(randomImg);
     // Creates local "temporary" object for holding user data
 
