@@ -36,14 +36,17 @@ body {
   background-image: url('../imgs/bgb.png');
 }
 
-.carousel-inner {
+#carouselExampleIndicators{
   max-width: 50%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
  }
 
-
+.carousel-indicators {
+  position:relative;
+  top: 15em;
+}
 
 
 
