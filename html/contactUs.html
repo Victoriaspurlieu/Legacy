@@ -15,6 +15,9 @@
 
     <!-- Link Font Awsome Here -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+
+    <!-- Link Firebase Here -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
   </head>
   <body>
     <!-- nav bar ---------------------------------------->
@@ -58,10 +61,10 @@
       <form action="#" class="needs-validation">
         <div class="form-row">
           <div class="col">
-            <input type="text" class="form-control" placeholder="First name" required />
+            <input type="text" class="form-control" id="first-name-input" placeholder="First name" required />
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder="Last name" required />
+            <input type="text" class="form-control" id="last-name-input" placeholder="Last name" required />
           </div>
         </div>
         <br />
@@ -92,29 +95,6 @@
     <!-- add sweet Alert js -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
-    <script>
-      $(document).ready(function() {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = $('.needs-validation');
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function(form) {
-          forms.submit(function(event) {
-            if (form.checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            } else {
-              Swal.fire({
-                position: 'center',
-                type: 'success',
-                title: 'Thank You for Contacting Us',
-                showConfirmButton: false,
-                timer: 3000
-              });
-            }
-            form.classList.add('was-validated');
-          });
-        });
-      });
-    </script>
+    <script src="../assets/javascript/contact.js"></script>
   </body>
 </html>
