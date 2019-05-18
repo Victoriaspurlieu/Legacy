@@ -118,7 +118,7 @@ var queryURL = test;
             }).then(function (response) {
                 console.log(response.hits[0].largeImageURL + "else triggered");
                 var imageLink = response.hits[0].largeImageURL;
-                var imageTrending = $("<img>").attr("src", imageLink).attr("class", "d-block w-100");
+                var imageTrending = $("<img>").attr("src", imageLink).attr("class", "d-block w-100 image");
                 // ask how to insert the variable i to the ID so that it populates the next div
                 $("#trendingTopic1").html(imageTrending);
 
