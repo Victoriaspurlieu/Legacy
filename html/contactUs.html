@@ -52,29 +52,31 @@
 
     <br /><br />
 
-    <div class="container" style="max-width: 785px">
+    <div class="container" style="max-width: 960px">
       <h3>Contact Us</h3>
 
-      <div class="row">
-        <div class="col">
-          <input type="text" class="form-control" placeholder="First name" />
+      <form action="#" class="needs-validation">
+        <div class="form-row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="First name" required />
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Last name" required />
+          </div>
         </div>
-        <div class="col">
-          <input type="text" class="form-control" placeholder="Last name" />
+        <br />
+        <div class="form-row">
+          <div class="form-group col">
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email" required />
+          </div>
         </div>
-      </div>
-      <br />
-      <div class="row">
-        <div class="form-group col">
-          <input type="email" class="form-control" id="inputEmail" placeholder="Email" />
+        <div class="form-row">
+          <div class="form-group col">
+            <textarea class="form-control" id="Textarea1" rows="8" placeholder="Comment" required></textarea>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="form-group col">
-          <textarea class="form-control" id="Textarea1" rows="8" placeholder="Comment"></textarea>
-        </div>
-      </div>
-      <button onclick="seweetAlertClick()" type="submit" class="btn btn-warning btn-lg btn-block" id="contactUsBtn">Submit</button>
+        <button type="submit" class="btn btn-warning btn-lg btn-block" id="contactUsBtn">Submit</button>
+      </form>
     </div>
 
     <!-- ---------------------------------------------- -->
@@ -91,15 +93,28 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
     <script>
-      function seweetAlertClick() {
-        Swal.fire({
-          position: 'center',
-          type: 'success',
-          title: 'Thank You for Contacting Us',
-          showConfirmButton: false,
-          timer: 3000
+      $(document).ready(function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = $('.needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          forms.submit(function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            } else {
+              Swal.fire({
+                position: 'center',
+                type: 'success',
+                title: 'Thank You for Contacting Us',
+                showConfirmButton: false,
+                timer: 3000
+              });
+            }
+            form.classList.add('was-validated');
+          });
         });
-      }
+      });
     </script>
   </body>
 </html>
