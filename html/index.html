@@ -14,15 +14,17 @@
 
     <!-- Link Font Awsome Here -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-
     <!-- Link Firebase Here -->
     <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+    <!-- Icon -->
+    <link rel="shortcut icon" href="../assets/imgs/favicon.png">
+
   </head>
 
   <body>
     <!-- nav bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-      <a class="navbar-brand" href="index.html">Legacy</a>
+      <a id="brand" class="navbar-brand" href="index.html">Legacy</a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
@@ -146,7 +148,19 @@
     </div>
     <br />
     <!-- ------------------------------------------------------------------------------ -->
-
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
     <hr />
     <!-- Footer -->
     <div class="card-body text-center">
