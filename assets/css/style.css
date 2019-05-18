@@ -73,17 +73,19 @@ color: gold;
   top:20px;
   }
 
-
-
-
 .form-control {
   margin-left: 5px;
 }
 
-.navbar-brand {
-  font-family: 'Major Mono Display', monospace;
-  font-size: 25px;
+#brand {
+  font-family: 'Bungee Shade', cursive;
+  font-size: 30px;
+  color: #ffc107!important;
 }
+#contactUs{
+  font-family: 'Bungee Shade', cursive;
+}
+
 #password {
   margin-right: 5px;
 }
@@ -93,6 +95,9 @@ color: gold;
 
 h3{
   text-align: center;
+  font-family: 'Bungee Shade', cursive;
+  color: #dc3545;
+  
 }
 
 /* hottopicSearch HTML */
