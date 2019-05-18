@@ -131,20 +131,6 @@ var backupKeyTrendspottr = "3bdb237763a5006354063055aa678cce";
 
 var queryURL = test;
 
-$.ajax({
-    url: queryURL,
-    method: "GET",
-}).then(function (response) {
-    console.log(test)
-    for (i = 0; i < 3; i++) {
-    var trendingResult = response.results.hashtags[i].value;
-    var trendingTopics = $("<h2>").text(trendingResult);
-
-    $("#testDiv").append(trendingTopics)
-
-    }
-
-});
 
 // TRENDING TOPICS API --- END HERE ---//
 

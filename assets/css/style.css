@@ -9,10 +9,21 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
 }
 
 .color {
   color: white;
+}
+
+h3 {
+  color:black;
+}
+
+.trending:hover {
+  color: gold;
+  font-size: 36px;
+  transition: .7s ease;
 }
 
 .img11 {
@@ -35,14 +46,36 @@ body {
   background-image: url('../imgs/background.png');
 }
 
-.carousel-inner {
-  max-width: 50%;
-  max-height: 300px;
+#carouselExampleIndicators{
+  width: 75%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  display: block;
+ }
+
+.carousel-indicators {
+  position:relative;
+  top: 20em;
+  visibility: hidden;
+
 }
+
+.onclickQuery:hover {
+font-size: 21px;
+transition: .5s ease;
+color: gold;
+
+}
+
+.carousel-caption.d-none.d-md-block
+{
+  position: absolute;
+  top:20px;
+  }
+
+
+
+
 .form-control {
   margin-left: 5px;
 }
