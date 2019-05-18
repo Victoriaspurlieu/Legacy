@@ -16,10 +16,6 @@
   color: white;
 }
 
-h3 {
-  color:black;
-}
-
 .trending:hover {
   color: gold;
   font-size: 36px;
@@ -90,19 +86,25 @@ color: gold;
   margin-right: 5px;
 }
 #loginbtn {
-  background-color: rgb(245, 245, 142);
+  background-color: #ffc107;
 }
 
 h3{
   text-align: center;
   font-family: 'Bungee Shade', cursive;
   color: #dc3545;
+}
   
+
+h2{
+  margin-left:10%;
+  font-family: 'Bungee Shade', cursive;
+  color:#ffc107;
 }
 
 /* hottopicSearch HTML */
 
-container{
+.container{
   margin-left: auto;
   margin-right: auto;
 
@@ -118,7 +120,7 @@ container{
  
 
 }
-
+  
 .label-primary{
   font-family: 'Lato', sans-serif;
   font-size: 25px;
@@ -167,4 +169,8 @@ address div{
  
   }
 
+}
+
+#usercard{
+margin-left: 10%! important;
 }
