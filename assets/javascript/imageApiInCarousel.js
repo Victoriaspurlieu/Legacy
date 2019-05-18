@@ -43,38 +43,59 @@ var queryURL = test;
         
 
         // var imageQuery2 = response.results.hashtags[1].value
-        var queryDiv2 = $("<div>");
-        var imageQuery2 = "#helping";
+        var queryDiv2 = $("<div class='onclickQuery'>");
+        var imageQuery2 = "#helping"
         var imageQuery2Word = imageQuery2.slice(1);
-        $("#hashtag2").html(imageQuery2);
-        $("#hashtag2").append(queryDiv2);
-        console.log(imageQuery2Word)
+        console.log(imageQuery1Word)
+        queryDiv2.attr("topicQuery",imageQuery2Word)
+        queryDiv2.html(imageQuery2);
+        $("#hashtag2").prepend(queryDiv2);
 
 
         // var imageQuery3 = response.results.hashtags[2].value
-        var imageQuery3 = "#religion";
+        var queryDiv3 = $("<div class='onclickQuery'>");
+        var imageQuery3 = "#savetheworld"
         var imageQuery3Word = imageQuery3.slice(1);
-        $("#hashtag3").text(imageQuery3);
+        console.log(imageQuery3Word)
+        queryDiv3.attr("topicQuery",imageQuery3Word)
+        queryDiv3.html(imageQuery3);
+        $("#hashtag3").prepend(queryDiv3);
 
         // var imageQuery4 = response.results.hashtags[3].value
-        var imageQuery4 = "#charity";
+        var queryDiv4 = $("<div class='onclickQuery'>");
+        var imageQuery4 = "#animals"
         var imageQuery4Word = imageQuery4.slice(1);
-        $("#hashtag4").text(imageQuery4);
+        console.log(imageQuery4Word)
+        queryDiv4.attr("topicQuery",imageQuery4Word)
+        queryDiv4.html(imageQuery4);
+        $("#hashtag4").prepend(queryDiv4);
         
         // var imageQuery5 = response.results.hashtags[4].value
-        var imageQuery5 = "#helping";
+        var queryDiv5 = $("<div class='onclickQuery'>");
+        var imageQuery5 = "#animalshelter"
         var imageQuery5Word = imageQuery5.slice(1);
-        $("#hashtag5").text(imageQuery5);
+        console.log(imageQuery5Word)
+        queryDiv5.attr("topicQuery",imageQuery5Word)
+        queryDiv5.html(imageQuery5);
+        $("#hashtag5").prepend(queryDiv5);
 
         // var imageQuery6 = response.results.hashtags[5].value
-        var imageQuery6 = "#dogs";
+        var queryDiv6 = $("<div class='onclickQuery'>");
+        var imageQuery6 = "#poverty"
         var imageQuery6Word = imageQuery6.slice(1);
-        $("#hashtag6").text(imageQuery6);
+        console.log(imageQuery1Word)
+        queryDiv6.attr("topicQuery",imageQuery6Word)
+        queryDiv6.html(imageQuery6);
+        $("#hashtag6").prepend(queryDiv6);
 
         // var imageQuery7 = response.results.hashtags[6].value
-        var imageQuery7 = "#cats"
+        var queryDiv7 = $("<div class='onclickQuery'>");
+        var imageQuery7 = "#charity"
         var imageQuery7Word = imageQuery7.slice(1);
-        $("#hashtag7").text(imageQuery7);
+        console.log(imageQuery1Word)
+        queryDiv7.attr("topicQuery",imageQuery7Word)
+        queryDiv7.html(imageQuery7);
+        $("#hashtag7").prepend(queryDiv7);
 
 
         // $("#testDiv").append(trendingTopics)
