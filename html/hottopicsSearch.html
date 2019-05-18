@@ -76,11 +76,12 @@
 
   <div class="form-row">
     <div class="col-7">
-      <input id="hottopicSearch" type="text" class="form-control" placeholder="Search Topics" />
-    </div>
+      <input id="hottopicSearch" type="text" class="form-control" placeholder="Enter your Topics and/or Location here" />
+    </div>  
     <div class="col">
       <a id="htSearch" class="btn btn-danger btn-md" role="button">Search</a>
     </div>
+    
   </div>
   <br />
 
@@ -102,16 +103,6 @@
 
   <script src="../assets/javascript/jing.js"></script>
 
-  <script>
-    $(document).ready(function () {
-      var urlParams = new URLSearchParams(window.location.search);
-
-      $('#hottopicSearch').val(urlParams.get('search'));
-      $('#htSearch').click();
-
-      console.log(urlParams);
-    });
-  </script>
 </body>
 
 </html>
