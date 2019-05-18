@@ -33,15 +33,21 @@ var queryURL = test;
 
 
         // var imageQuery1 = response.results.hashtags[0].value
+        var queryDiv1 = $("<div class='onclickQuery'>");
         var imageQuery1 = "#charity"
-        $("#hashtag1").text(imageQuery1);
         var imageQuery1Word = imageQuery1.slice(1);
         console.log(imageQuery1Word)
+        queryDiv1.attr("topicQuery",imageQuery1Word)
+        queryDiv1.html(imageQuery1);
+        $("#hashtag1").prepend(queryDiv1);
+        
 
         // var imageQuery2 = response.results.hashtags[1].value
+        var queryDiv2 = $("<div>");
         var imageQuery2 = "#helping";
-        $("#hashtag2").text(imageQuery2);
         var imageQuery2Word = imageQuery2.slice(1);
+        $("#hashtag2").html(imageQuery2);
+        $("#hashtag2").append(queryDiv2);
         console.log(imageQuery2Word)
 
 
