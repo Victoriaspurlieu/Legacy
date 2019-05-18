@@ -359,3 +359,16 @@ var queryURL = test;
 // });
 
     // CLOSING FOR TRENDSPOTTER DIV
+
+
+function randerNextPage () {
+      window.location.href = "hottopicsSearch.html?search=" + clickQuery
+  }
+
+ $(".onclickQuery").on("click", function () {
+   console.log ("CLICKED ON " + $(this).attr("topicQuery"));
+  clickQuery =  $(this).attr("topicQuery") ;
+  randerNextPage ();
+
+  });
+
