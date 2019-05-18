@@ -37,7 +37,7 @@ $(document).ready(function () {
 
 
     function displayHottopicSearch() {
-        $('#volunteer-section').empty();
+        $(".volunteer-section").empty();
 
         var hotTopics = $("#hottopicSearch").val().trim();
 
@@ -53,6 +53,7 @@ $(document).ready(function () {
 
 
                 var results = response.items;
+
                 for (i = 0; i < results.length; i++) {
                     var volunteer = results[i];
 
@@ -76,16 +77,16 @@ $(document).ready(function () {
                         "<strong> " +
                         volunteerTitle +
                         "</strong>" +
-                        "</span>" + "<br>"+"<br>"
+                        "</span>" + "<br>" + "<br>"
                     );
 
 
                     // If the item has snippet & link, log and append to volunteerList
                     var volunteerSummary = volunteer.snippet;
                     var volunteerLink = volunteer.formattedUrl;
-                    
+
                     if (volunteerSummary) {
-                        $volunteerListItem.append("<h5 class='statement'>Statement: " + volunteerSummary + "</h5>"+"<br>");
+                        $volunteerListItem.append("<h5 class='statement'>Statement: " + volunteerSummary + "</h5>" + "<br>");
                     }
 
                     // If the item has image and website link, add the link to the image and append to volunteerList
@@ -99,7 +100,7 @@ $(document).ready(function () {
                     // If the item has description, log and append to volunteerList
                     var volunteerOrgDes = volunteer.pagemap.metatags[0]["og:description"];
                     if (volunteerOrgDes) {
-                        $volunteerListItem.append("<div class= 'description'> " + volunteerOrgDes + "</div>"+ "<br>");
+                        $volunteerListItem.append("<div class= 'description'> " + volunteerOrgDes + "</div>" + "<br>");
 
                     }
 
@@ -110,7 +111,7 @@ $(document).ready(function () {
                     var postalCode = volunteer.pagemap.metatags[0]["og:postal-code"]
                     var country = volunteer.pagemap.metatags[0]["og:country-name"]
 
-                    
+
                     var addressLayout = $("<address>");
                     if (address || locality || region || postalCode || country) {
                         if (address) {
@@ -129,12 +130,12 @@ $(document).ready(function () {
                     }
 
                     $volunteerListItem.append(addressLayout);
-  
-                        // add a link.
-                        if (volunteerLink) {
-                            $volunteerListItem.append("<br>"+"<div class=link-action>"+"<a href='" + volunteerLink + "'target='_blank'>" + "THIS IS A LINK" + "</a>"+"</div>")
-                        }
-                    
+
+                    // add a link.
+                    if (volunteerLink) {
+                        $volunteerListItem.append("<br>" + "<div class=link-action>" + "<a href='" + volunteerLink + "'target='_blank'>" + "LINK TO WEBSITE" + "</a>" + "</div>")
+                    }
+
 
 
                     // append <li> to <ul>
@@ -162,12 +163,12 @@ $(document).ready(function () {
 
 
                 }
-            
-                
+
 
 
             })
-     
+
             $("#hottopicSearch").val("");
+            
     }
 });

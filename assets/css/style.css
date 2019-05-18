@@ -57,7 +57,6 @@ body {
 #loginbtn {
   background-color: rgb(245, 245, 142);
 }
-<<<<<<< HEAD
 #loginbtn{
  background-color: rgb(245, 245, 142);
 }
@@ -119,7 +118,15 @@ address div{
 }
 
 
+@media screen and (max-width: 1650px) {
+   .list-group{
+    width: 70%;
+    margin-bottom: 15px !important;
+    padding: 10px 10px 10px 10px !important;
+    margin: auto;
+    height: auto;
+    float: none;
+ 
+  }
 
-
-=======
->>>>>>> master
+}
