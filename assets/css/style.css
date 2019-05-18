@@ -36,13 +36,14 @@ body {
 }
 
 .carousel-inner {
-  max-width: 75%;
-  max-height: 75%;
+  max-width: 50%;
+  max-height: 40%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   display: block;
 }
+
 .form-control {
   margin-left: 5px;
 }
