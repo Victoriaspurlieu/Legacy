@@ -16,10 +16,6 @@
   color: white;
 }
 
-h3 {
-  color: black;
-}
-
 .trending:hover {
   color: gold;
   font-size: 36px;
@@ -40,6 +36,10 @@ h3 {
 .card-img-top {
   max-width: 100%;
   height: 200px;
+}
+
+body {
+  background-image: url('../imgs/background.png');
 }
 
 #carouselExampleIndicators {
@@ -70,24 +70,37 @@ h3 {
   margin-left: 5px;
 }
 
-.navbar-brand {
-  font-family: 'Major Mono Display', monospace;
-  font-size: 25px;
+#brand {
+  font-family: 'Bungee Shade', cursive;
+  font-size: 30px;
+  color: #ffc107 !important;
 }
+#contactUs {
+  font-family: 'Bungee Shade', cursive;
+}
+
 #password {
   margin-right: 5px;
 }
 #loginbtn {
-  background-color: rgb(245, 245, 142);
+  background-color: #ffc107;
 }
 
 h3 {
   text-align: center;
+  font-family: 'Bungee Shade', cursive;
+  color: #dc3545;
+}
+
+h2 {
+  margin-left: 10%;
+  font-family: 'Bungee Shade', cursive;
+  color: #ffc107;
 }
 
 /* hottopicSearch HTML */
 
-container {
+.container {
   margin-left: auto;
   margin-right: auto;
 }
@@ -143,4 +156,12 @@ address div {
     height: auto;
     float: none;
   }
+}
+
+#usercard {
+  margin-left: 10% !important;
+}
+
+#contactUs {
+  font-family: 'Bungee Shade', cursive;
 }
