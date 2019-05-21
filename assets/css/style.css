@@ -5,31 +5,27 @@
 }
 
 .jumbotron {
-  background-image: url('../imgs/bg.jpg');
+  background-image: url('../imgs/image.jpeg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.navbar.navbar-expand-lg.navbar-light.bg-info {
-  background-image: url('.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  overflow: hidden;
 }
 
 .color {
   color: white;
 }
 
+.trending:hover {
+  color: gold;
+  font-size: 36px;
+  transition: 0.7s ease;
+}
+
 .img11 {
   height: 250px;
   width: 31%;
   margin: 10px;
-}
-
-.nav-link.donate {
-  color: green;
 }
 
 .card {
@@ -43,20 +39,129 @@
 }
 
 body {
-  background-image: url('../imgs/bgb.png');
+  background-image: url('../imgs/background.png');
 }
 
-.form-control{  
+#carouselExampleIndicators {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.carousel-indicators {
+  position: relative;
+  top: 20em;
+  visibility: hidden;
+}
+
+.onclickQuery:hover {
+  font-size: 21px;
+  transition: 0.5s ease;
+  color: gold;
+}
+
+.carousel-caption.d-none.d-md-block {
+  position: absolute;
+  top: 20px;
+}
+
+.form-control {
   margin-left: 5px;
 }
 
-#brand{
-  font-family: 'Major Mono Display', monospace;
+#brand {
+  font-family: 'Bungee Shade', cursive;
+  font-size: 30px;
+  color: #ffc107 !important;
+}
+#contactUs {
+  font-family: 'Bungee Shade', cursive;
+}
+
+#password {
+  margin-right: 5px;
+}
+#loginbtn {
+  background-color: #ffc107;
+}
+
+h3 {
+  text-align: center;
+  font-family: 'Bungee Shade', cursive;
+  color: #dc3545;
+}
+
+h2 {
+  margin-left: 10%;
+  font-family: 'Bungee Shade', cursive;
+  color: #ffc107;
+}
+
+/* hottopicSearch HTML */
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.list-group {
+  width: 50%;
+  margin-bottom: 15px !important;
+  float: left;
+  padding: 10px 10px 10px 10px !important;
+  margin: auto;
+  height: 500px;
+}
+
+.label-primary {
+  font-family: 'Lato', sans-serif;
   font-size: 25px;
 }
-#password{
-  margin-right:5px;
+
+.statement {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
 }
-#loginbtn{
- background-color: rgb(245, 245, 142);
+
+.link-action {
+  background-color: inherit;
+  border-top: 1px solid rgba(160, 160, 160, 0.2);
+  position: relative;
+  padding: 16px 24px;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(221, 219, 219);
+  text-align: center;
+}
+
+.description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+address div {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-style: italic;
+  color: rgb(3, 78, 3);
+}
+
+@media screen and (max-width: 1650px) {
+  .list-group {
+    width: 70%;
+    margin-bottom: 15px !important;
+    padding: 10px 10px 10px 10px !important;
+    margin: auto;
+    height: auto;
+    float: none;
+  }
+}
+
+#usercard {
+  margin-left: 10% !important;
+}
+
+#contactUs {
+  font-family: 'Bungee Shade', cursive;
 }

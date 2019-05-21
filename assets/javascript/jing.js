@@ -11,36 +11,42 @@ function initMap() {
 }
 
 
-
+//load the page
 $(document).ready(function () {
+
+    var urlParams = new URLSearchParams(window.location.search);
+
+      //get the string from url parameters 
+      $('#hottopicSearch').val(urlParams.get('search'));
+
+      //***when page loaded, run this function to add card and markers on google maps
+      displayHottopicSearch();
 
     //type keyword in the search bar on the main page and dispay info on the VolunteerSearch page
     var randerNextPage = function () {
         window.location.href = "hottopicsSearch.html?search=" + $("#hottopicSearch").val();
     }
 
-    // on the main page, if hottopic search button is clicked, go to the VolunteerSearch page
+    // on the main page, if hottopic search button is clicked, redirect to the VolunteerSearch page and apply input value to url
     $("#hottopicSearchBtn").on("click", randerNextPage)
 
-    // on the main page, if the Enter key is pressed after type a keyword on the hottopic search bar, go to the VolunteerSearch page
+    // on the main page or VolunteerSearch page, if the Enter key is pressed, redirect to the VolunteerSearch page and apply input value to url
     $("#hottopicSearch").on("keypress", function (event) {
         if (event.key === "Enter") {
             randerNextPage()
         }
 
-        $("#htSearch").on("click", displayHottopicSearch);
-
     })
 
-    // do research on the current page hottopicSearch
-    $('#htSearch').on('click', displayHottopicSearch);
 
+    // when search button is clicked, reload the page and apply input value to url
+    $('#htSearch').on('click', randerNextPage);
+    
 
     function displayHottopicSearch() {
-        $('.volunteer-section').empty();
+        $(".volunteer-section").empty();
 
         var hotTopics = $("#hottopicSearch").val().trim();
-
         var queryURL = "https://www.googleapis.com/customsearch/v1?q=" +
             hotTopics + "&cx=007887247332676928493%3Aix05svhfpzm&key=AIzaSyBJrw0IM3bX1sGlbgH1Pwwbygf422fFx_M";
 
@@ -53,6 +59,7 @@ $(document).ready(function () {
 
 
                 var results = response.items;
+
                 for (i = 0; i < results.length; i++) {
                     var volunteer = results[i];
 
@@ -73,27 +80,25 @@ $(document).ready(function () {
                     $volunteerListItem.append(
                         "<span class='label label-primary'>" +
                         volunteerCount +
-                        "</span>" +
-
                         "<strong> " +
                         volunteerTitle +
-                        "</strong>"
+                        "</strong>" +
+                        "</span>" + "<br>" + "<br>"
                     );
 
-                    var volunteerLink = volunteer.formattedUrl;
 
                     // If the item has snippet & link, log and append to volunteerList
                     var volunteerSummary = volunteer.snippet;
                     var volunteerLink = volunteer.formattedUrl;
-                    if (volunteerSummary && volunteerLink) {
-                        $volunteerListItem.append("<h5>Statement: " + volunteerSummary + "</h5>");
-                        $volunteerListItem.append("<a href='" + volunteerLink + "'>" + volunteerLink + "</a>")
+
+                    if (volunteerSummary) {
+                        $volunteerListItem.append("<h5 class='statement'>Statement: " + volunteerSummary + "</h5>" + "<br>");
                     }
 
                     // If the item has image and website link, add the link to the image and append to volunteerList
                     var volunteerImage = volunteer.pagemap.metatags[0]["og:image"];
                     if (volunteerImage) {
-                        $volunteerListItem.append("<a style='float:left' href='" + volunteerLink + "'>" + "<img style='width:200px; height:200px' src='" + volunteerImage + "'>" + "</a>");
+                        $volunteerListItem.append("<a style='float:left' href='" + volunteerLink + "'target='_blank'>" + "<img style='width:200px; height:200px;border: 1px solid #ddd;border-radius: 4px;padding: 10px;' src='" + volunteerImage + "'>" + "</a>");
 
                     }
 
@@ -101,7 +106,7 @@ $(document).ready(function () {
                     // If the item has description, log and append to volunteerList
                     var volunteerOrgDes = volunteer.pagemap.metatags[0]["og:description"];
                     if (volunteerOrgDes) {
-                        $volunteerListItem.append("<div >Description: " + volunteerOrgDes + "</div>");
+                        $volunteerListItem.append("<div class= 'description'> " + volunteerOrgDes + "</div>" + "<br>");
 
                     }
 
@@ -113,22 +118,30 @@ $(document).ready(function () {
                     var country = volunteer.pagemap.metatags[0]["og:country-name"]
 
 
-
+                    var addressLayout = $("<address>");
                     if (address || locality || region || postalCode || country) {
                         if (address) {
-                            $volunteerListItem.append("<h5>Location: </h5>");
-                            $volunteerListItem.append("<h5>" + address + "</h5>");
+                            addressLayout.append("<div>Visit us at: </div>");
+                            addressLayout.append("<div>" + address + "</div>");
                         }
                         if (locality) {
-                            $volunteerListItem.append("<h5>" + locality + "</h5>");
+                            addressLayout.append("<div>" + locality + "</div>");
                         }
                         if (region || postalCode) {
-                            $volunteerListItem.append("<h5>" + region + " " + postalCode + "</h5>");
+                            addressLayout.append("<div>" + region + " " + postalCode + "</div>");
                         }
                         if (country) {
-                            $volunteerListItem.append("<h5>" + country + "</h5>");
+                            addressLayout.append("<div>" + country + "</div>");
                         }
                     }
+
+                    $volunteerListItem.append(addressLayout);
+
+                    // add a link.
+                    if (volunteerLink) {
+                        $volunteerListItem.append("<br>" + "<div class=link-action>" + "<a href='" + volunteerLink + "'target='_blank'>" + "LINK TO WEBSITE" + "</a>" + "</div>")
+                    }
+
 
 
                     // append <li> to <ul>
@@ -161,6 +174,7 @@ $(document).ready(function () {
 
             })
 
-
+            $("#hottopicSearch").val("");
+            
     }
 });

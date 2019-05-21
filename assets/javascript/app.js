@@ -107,3 +107,33 @@ $(document).ready(function(){
      
   });
 });
+
+
+
+// TRENDING TOPICS API --- START HERE ---//
+
+var apiKey = "user_key=dd6dab64b179a2bb9a93127562835ed8";
+
+var searchResult = "";
+var corbEnabler = "https://cors-anywhere.herokuapp.com/";
+var queryOrgHunter = "https://data.orghunter.com/v1/charitysearch?"
+var twitterApiTrending = "https://api.twitter.com/1.1/trends/place.json?id=1"
+var trendSpotter = "http://api.trendspottr.com/v1.5/search?key=ae8480dff3fa343b6d215da041939e3e&q=?"
+var nytSearch = "https://api.nytimes.com/svc/search/v2/articlesearch.json?&query=disaster&api-key=R1a31F4tBjCUaM2ho8GtIFsrSdtXt30M";
+var trendSpotterKey = "charity";
+
+var test = trendSpotter + trendSpotterKey;
+
+// DO NOT USE THIS KEY, ONLY USE FOR PRESENTATION . API HAS 100 SEARCH LIMIT per MONTH
+var backupKeyTrendspottr = "3bdb237763a5006354063055aa678cce";
+// DO NOT USE THIS KEY, ONLY USE FOR PRESENTATION . API HAS 100 SEARCH LIMIT per MONTH
+
+
+var queryURL = test;
+
+
+// TRENDING TOPICS API --- END HERE ---//
+
+
+
+
