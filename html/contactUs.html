@@ -15,18 +15,27 @@
 
     <!-- Link Font Awsome Here -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+
+    <!-- Link Font Awsome Here -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade%7CMajor+Mono+Display%7CMonoton&display=swap" rel="stylesheet" />
+
+    <!-- Icon -->
+    <link rel="shortcut icon" href="../assets/imgs/favicon.png" />
+    <!-- Link Firebase Here -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
   </head>
   <body>
     <!-- nav bar ---------------------------------------->
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-      <a class="navbar-brand" href="index.html">Legacy</a>
+      <a class="navbar-brand" id="brand" href="index.html">Legacy</a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="contactUs.html">Contact Us </a>
+            <a class="nav-link" id="contactUs" href="contactUs.html">Contact Us </a>
           </li>
         </ul>
 
@@ -52,29 +61,31 @@
 
     <br /><br />
 
-    <div class="container" style="max-width: 785px">
+    <div class="container" style="max-width: 960px">
       <h3>Contact Us</h3>
 
-      <div class="row">
-        <div class="col">
-          <input type="text" class="form-control" placeholder="First name" />
+      <form action="#" class="needs-validation">
+        <div class="form-row">
+          <div class="col">
+            <input type="text" class="form-control" id="first-name-input" placeholder="First name" required />
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" id="last-name-input" placeholder="Last name" required />
+          </div>
         </div>
-        <div class="col">
-          <input type="text" class="form-control" placeholder="Last name" />
+        <br />
+        <div class="form-row">
+          <div class="form-group col">
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email" required />
+          </div>
         </div>
-      </div>
-      <br />
-      <div class="row">
-        <div class="form-group col">
-          <input type="email" class="form-control" id="inputEmail" placeholder="Email" />
+        <div class="form-row">
+          <div class="form-group col">
+            <textarea class="form-control" id="Textarea1" rows="8" placeholder="Comment" required></textarea>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="form-group col">
-          <textarea class="form-control" id="Textarea1" rows="8" placeholder="Comment"></textarea>
-        </div>
-      </div>
-      <button onclick="seweetAlertClick()" type="submit" class="btn btn-warning btn-lg btn-block" id="contactUsBtn">Submit</button>
+        <button type="submit" class="btn btn-warning btn-lg btn-block" id="contactUsBtn">Submit</button>
+      </form>
     </div>
 
     <!-- ---------------------------------------------- -->
@@ -90,16 +101,6 @@
     <!-- add sweet Alert js -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
-    <script>
-      function seweetAlertClick() {
-        Swal.fire({
-          position: 'center',
-          type: 'success',
-          title: 'Thank You for Contacting Us',
-          showConfirmButton: false,
-          timer: 3000
-        });
-      }
-    </script>
+    <script src="../assets/javascript/contact.js"></script>
   </body>
 </html>

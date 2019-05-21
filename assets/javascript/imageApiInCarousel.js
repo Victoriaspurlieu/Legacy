@@ -1,7 +1,5 @@
+
 $( document ).ready(function() {
-
-
-
 
 var apiKey = "user_key=dd6dab64b179a2bb9a93127562835ed8";
 
@@ -142,255 +140,265 @@ var queryURL = test;
 
 
 
+
     var pixabayApi = '12500053-5110b31002f0fc8b89ed377c4';
 
-    var URL1 = "https://pixabay.com/api/?key=" + pixabayApi + "&q=" + encodeURIComponent(imageQuery1Word);
-    var URL2 = "https://pixabay.com/api/?key=" + pixabayApi + "&q=" + encodeURIComponent(imageQuery2Word);
-    var URL3 = "https://pixabay.com/api/?key=" + pixabayApi + "&q=" + encodeURIComponent(imageQuery3Word);
-    var URL4 = "https://pixabay.com/api/?key=" + pixabayApi + "&q=" + encodeURIComponent(imageQuery4Word);
-    var URL5 = "https://pixabay.com/api/?key=" + pixabayApi + "&q=" + encodeURIComponent(imageQuery5Word);
-    var URL6 = "https://pixabay.com/api/?key=" + pixabayApi + "&q=" + encodeURIComponent(imageQuery6Word);
-    var URL7 = "https://pixabay.com/api/?key=" + pixabayApi + "&q=" + encodeURIComponent(imageQuery7Word);
+    var URL1 = 'https://pixabay.com/api/?key=' + pixabayApi + '&q=' + encodeURIComponent(imageQuery1Word);
+    var URL2 = 'https://pixabay.com/api/?key=' + pixabayApi + '&q=' + encodeURIComponent(imageQuery2Word);
+    var URL3 = 'https://pixabay.com/api/?key=' + pixabayApi + '&q=' + encodeURIComponent(imageQuery3Word);
+    var URL4 = 'https://pixabay.com/api/?key=' + pixabayApi + '&q=' + encodeURIComponent(imageQuery4Word);
+    var URL5 = 'https://pixabay.com/api/?key=' + pixabayApi + '&q=' + encodeURIComponent(imageQuery5Word);
+    var URL6 = 'https://pixabay.com/api/?key=' + pixabayApi + '&q=' + encodeURIComponent(imageQuery6Word);
+    var URL7 = 'https://pixabay.com/api/?key=' + pixabayApi + '&q=' + encodeURIComponent(imageQuery7Word);
 
-
-    var URL1alt = "https://pixabay.com/api/?key=" + pixabayApi + "&q=" + encodeURIComponent("charity");
-    var URL2alt = "https://pixabay.com/api/?key=" + pixabayApi + "&q=" + encodeURIComponent("donation");
-    var URL3alt = "https://pixabay.com/api/?key=" + pixabayApi + "&q=" + encodeURIComponent("helping");
-    var URL4alt = "https://pixabay.com/api/?key=" + pixabayApi + "&q=" + encodeURIComponent("charity");
-    var URL5alt = "https://pixabay.com/api/?key=" + pixabayApi + "&q=" + encodeURIComponent("volunteer");
-    var URL6alt = "https://pixabay.com/api/?key=" + pixabayApi + "&q=" + encodeURIComponent("donation");
-    var URL7alt = "https://pixabay.com/api/?key=" + pixabayApi + "&q=" + encodeURIComponent("poor");
+    var URL1alt = 'https://pixabay.com/api/?key=' + pixabayApi + '&q=' + encodeURIComponent('charity');
+    var URL2alt = 'https://pixabay.com/api/?key=' + pixabayApi + '&q=' + encodeURIComponent('donation');
+    var URL3alt = 'https://pixabay.com/api/?key=' + pixabayApi + '&q=' + encodeURIComponent('helping');
+    var URL4alt = 'https://pixabay.com/api/?key=' + pixabayApi + '&q=' + encodeURIComponent('charity');
+    var URL5alt = 'https://pixabay.com/api/?key=' + pixabayApi + '&q=' + encodeURIComponent('volunteer');
+    var URL6alt = 'https://pixabay.com/api/?key=' + pixabayApi + '&q=' + encodeURIComponent('donation');
+    var URL7alt = 'https://pixabay.com/api/?key=' + pixabayApi + '&q=' + encodeURIComponent('poor');
 
     var randomizer = Math.floor(Math.random() * 7);
 
     // START OF TRENDING IMAGE 1 ------->
 
-    $.getJSON(URL1, function (data) {
-        if (parseInt(data.totalHits) == 0) {
-            $.ajax({
-                url: URL1alt,
-                method: "GET",
-            }).then(function (response) {
-                console.log(response.hits[randomizer].largeImageURL + "No Result");
-                var imageLink = response.hits[randomizer].largeImageURL;
-                var imageTrending = $("<img>").attr("src", imageLink).attr("class", "d-block w-100");
-                // ask how to insert the variable i to the ID so that it populates the next div
-                $("#trendingTopic1").html(imageTrending);
-            });
-        }
-        else {
-            $.ajax({
-                url: URL1,
-                method: "GET",
-            }).then(function (response) {
-                console.log(response.hits[0].largeImageURL + "else triggered");
-                var imageLink = response.hits[0].largeImageURL;
-                var imageTrending = $("<img>").attr("src", imageLink).attr("class", "d-block w-100");
-                // ask how to insert the variable i to the ID so that it populates the next div
-                $("#trendingTopic1").html(imageTrending);
-
-            })
-        }
+    $.getJSON(URL1, function(data) {
+      if (parseInt(data.totalHits) == 0) {
+        $.ajax({
+          url: URL1alt,
+          method: 'GET'
+        }).then(function(response) {
+          console.log(response.hits[randomizer].largeImageURL + 'No Result');
+          var imageLink = response.hits[randomizer].largeImageURL;
+          var imageTrending = $('<img>')
+            .attr('src', imageLink)
+            .attr('class', 'd-block w-100');
+          // ask how to insert the variable i to the ID so that it populates the next div
+          $('#trendingTopic1').html(imageTrending);
+        });
+      } else {
+        $.ajax({
+          url: URL1,
+          method: 'GET'
+        }).then(function(response) {
+          console.log(response.hits[0].largeImageURL + 'else triggered');
+          var imageLink = response.hits[0].largeImageURL;
+          var imageTrending = $('<img>')
+            .attr('src', imageLink)
+            .attr('class', 'd-block w-100');
+          // ask how to insert the variable i to the ID so that it populates the next div
+          $('#trendingTopic1').html(imageTrending);
+        });
+      }
     });
 
     // END OF TRENDING IMAGE 1 ------->
 
-
     // START OF TRENDING IMAGE 2 ------->
 
-    $.getJSON(URL2, function (data) {
-        if (parseInt(data.totalHits) == 0) {
-            $.ajax({
-                url: URL2alt,
-                method: "GET",
-            }).then(function (response) {
-                console.log(response.hits[randomizer].largeImageURL + "No Result");
-                var imageLink = response.hits[randomizer].largeImageURL;
-                var imageTrending = $("<img>").attr("src", imageLink).attr("class", "d-block w-100");
-                // ask how to insert the variable i to the ID so that it populates the next div
-                $("#trendingTopic2").html(imageTrending);
-            });
-        }
-        else {
-            $.ajax({
-                url: URL2,
-                method: "GET",
-            }).then(function (response) {
-                console.log(response.hits[0].largeImageURL + "else triggered");
-                var imageLink = response.hits[0].largeImageURL;
-                var imageTrending = $("<img>").attr("src", imageLink).attr("class", "d-block w-100");
-                // ask how to insert the variable i to the ID so that it populates the next div
-                $("#trendingTopic2").html(imageTrending);
-
-            })
-        }
+    $.getJSON(URL2, function(data) {
+      if (parseInt(data.totalHits) == 0) {
+        $.ajax({
+          url: URL2alt,
+          method: 'GET'
+        }).then(function(response) {
+          console.log(response.hits[randomizer].largeImageURL + 'No Result');
+          var imageLink = response.hits[randomizer].largeImageURL;
+          var imageTrending = $('<img>')
+            .attr('src', imageLink)
+            .attr('class', 'd-block w-100');
+          // ask how to insert the variable i to the ID so that it populates the next div
+          $('#trendingTopic2').html(imageTrending);
+        });
+      } else {
+        $.ajax({
+          url: URL2,
+          method: 'GET'
+        }).then(function(response) {
+          console.log(response.hits[0].largeImageURL + 'else triggered');
+          var imageLink = response.hits[0].largeImageURL;
+          var imageTrending = $('<img>')
+            .attr('src', imageLink)
+            .attr('class', 'd-block w-100');
+          // ask how to insert the variable i to the ID so that it populates the next div
+          $('#trendingTopic2').html(imageTrending);
+        });
+      }
     });
 
     // END OF TRENDING IMAGE 2 ------->
 
-
     // START OF TRENDING IMAGE 3 ------->
 
-    $.getJSON(URL3, function (data) {
-        if (parseInt(data.totalHits) == 0) {
-            $.ajax({
-                url: URL3alt,
-                method: "GET",
-            }).then(function (response) {
-                console.log(response.hits[randomizer].largeImageURL + "No Result");
-                var imageLink = response.hits[randomizer].largeImageURL;
-                var imageTrending = $("<img>").attr("src", imageLink).attr("class", "d-block w-100");
-                // ask how to insert the variable i to the ID so that it populates the next div
-                $("#trendingTopic3").html(imageTrending);
-            });
-        }
-        else {
-            $.ajax({
-                url: URL3,
-                method: "GET",
-            }).then(function (response) {
-                console.log(response.hits[0].largeImageURL + "else triggered");
-                var imageLink = response.hits[0].largeImageURL;
-                var imageTrending = $("<img>").attr("src", imageLink).attr("class", "d-block w-100");
-                // ask how to insert the variable i to the ID so that it populates the next div
-                $("#trendingTopic3").html(imageTrending);
-
-            })
-        }
+    $.getJSON(URL3, function(data) {
+      if (parseInt(data.totalHits) == 0) {
+        $.ajax({
+          url: URL3alt,
+          method: 'GET'
+        }).then(function(response) {
+          console.log(response.hits[randomizer].largeImageURL + 'No Result');
+          var imageLink = response.hits[randomizer].largeImageURL;
+          var imageTrending = $('<img>')
+            .attr('src', imageLink)
+            .attr('class', 'd-block w-100');
+          // ask how to insert the variable i to the ID so that it populates the next div
+          $('#trendingTopic3').html(imageTrending);
+        });
+      } else {
+        $.ajax({
+          url: URL3,
+          method: 'GET'
+        }).then(function(response) {
+          console.log(response.hits[0].largeImageURL + 'else triggered');
+          var imageLink = response.hits[0].largeImageURL;
+          var imageTrending = $('<img>')
+            .attr('src', imageLink)
+            .attr('class', 'd-block w-100');
+          // ask how to insert the variable i to the ID so that it populates the next div
+          $('#trendingTopic3').html(imageTrending);
+        });
+      }
     });
 
     // END OF TRENDING IMAGE 3 ------->
 
-                    // START OF TRENDING IMAGE 4 ------->
+    // START OF TRENDING IMAGE 4 ------->
 
-                    $.getJSON(URL4, function (data) {
-        if (parseInt(data.totalHits) == 0) {
-            $.ajax({
-                url: URL4alt,
-                method: "GET",
-            }).then(function (response) {
-                console.log(response.hits[randomizer].largeImageURL + "No Result");
-                var imageLink = response.hits[randomizer].largeImageURL;
-                var imageTrending = $("<img>").attr("src", imageLink).attr("class", "d-block w-100");
-                // ask how to insert the variable i to the ID so that it populates the next div
-                $("#trendingTopic4").html(imageTrending);
-            });
-        }
-        else {
-            $.ajax({
-                url: URL4,
-                method: "GET",
-            }).then(function (response) {
-                console.log(response.hits[0].largeImageURL + "else triggered");
-                var imageLink = response.hits[0].largeImageURL;
-                var imageTrending = $("<img>").attr("src", imageLink).attr("class", "d-block w-100");
-                // ask how to insert the variable i to the ID so that it populates the next div
-                $("#trendingTopic4").html(imageTrending);
-
-            })
-        }
+    $.getJSON(URL4, function(data) {
+      if (parseInt(data.totalHits) == 0) {
+        $.ajax({
+          url: URL4alt,
+          method: 'GET'
+        }).then(function(response) {
+          console.log(response.hits[randomizer].largeImageURL + 'No Result');
+          var imageLink = response.hits[randomizer].largeImageURL;
+          var imageTrending = $('<img>')
+            .attr('src', imageLink)
+            .attr('class', 'd-block w-100');
+          // ask how to insert the variable i to the ID so that it populates the next div
+          $('#trendingTopic4').html(imageTrending);
+        });
+      } else {
+        $.ajax({
+          url: URL4,
+          method: 'GET'
+        }).then(function(response) {
+          console.log(response.hits[0].largeImageURL + 'else triggered');
+          var imageLink = response.hits[0].largeImageURL;
+          var imageTrending = $('<img>')
+            .attr('src', imageLink)
+            .attr('class', 'd-block w-100');
+          // ask how to insert the variable i to the ID so that it populates the next div
+          $('#trendingTopic4').html(imageTrending);
+        });
+      }
     });
 
     // END OF TRENDING IMAGE 4 ------->
 
+    // START OF TRENDING IMAGE 5 ------->
 
-                    // START OF TRENDING IMAGE 5 ------->
-
-                    $.getJSON(URL5, function (data) {
-        if (parseInt(data.totalHits) == 0) {
-            $.ajax({
-                url: URL5alt,
-                method: "GET",
-            }).then(function (response) {
-                console.log(response.hits[randomizer].largeImageURL + "No Result");
-                var imageLink = response.hits[randomizer].largeImageURL;
-                var imageTrending = $("<img>").attr("src", imageLink).attr("class", "d-block w-100");
-                // ask how to insert the variable i to the ID so that it populates the next div
-                $("#trendingTopic5").html(imageTrending);
-            });
-        }
-        else {
-            $.ajax({
-                url: URL5,
-                method: "GET",
-            }).then(function (response) {
-                console.log(response.hits[0].largeImageURL + "else triggered");
-                var imageLink = response.hits[0].largeImageURL;
-                var imageTrending = $("<img>").attr("src", imageLink).attr("class", "d-block w-100");
-                // ask how to insert the variable i to the ID so that it populates the next div
-                $("#trendingTopic5").html(imageTrending);
-
-            })
-        }
+    $.getJSON(URL5, function(data) {
+      if (parseInt(data.totalHits) == 0) {
+        $.ajax({
+          url: URL5alt,
+          method: 'GET'
+        }).then(function(response) {
+          console.log(response.hits[randomizer].largeImageURL + 'No Result');
+          var imageLink = response.hits[randomizer].largeImageURL;
+          var imageTrending = $('<img>')
+            .attr('src', imageLink)
+            .attr('class', 'd-block w-100');
+          // ask how to insert the variable i to the ID so that it populates the next div
+          $('#trendingTopic5').html(imageTrending);
+        });
+      } else {
+        $.ajax({
+          url: URL5,
+          method: 'GET'
+        }).then(function(response) {
+          console.log(response.hits[0].largeImageURL + 'else triggered');
+          var imageLink = response.hits[0].largeImageURL;
+          var imageTrending = $('<img>')
+            .attr('src', imageLink)
+            .attr('class', 'd-block w-100');
+          // ask how to insert the variable i to the ID so that it populates the next div
+          $('#trendingTopic5').html(imageTrending);
+        });
+      }
     });
 
     // END OF TRENDING IMAGE 5 ------->
 
+    // START OF TRENDING IMAGE 6 ------->
 
-                    // START OF TRENDING IMAGE 6 ------->
-
-                    $.getJSON(URL6, function (data) {
-        if (parseInt(data.totalHits) == 0) {
-            $.ajax({
-                url: URL6alt,
-                method: "GET",
-            }).then(function (response) {
-                console.log(response.hits[randomizer].largeImageURL + "No Result");
-                var imageLink = response.hits[randomizer].largeImageURL;
-                var imageTrending = $("<img>").attr("src", imageLink).attr("class", "d-block w-100");
-                // ask how to insert the variable i to the ID so that it populates the next div
-                $("#trendingTopic6").html(imageTrending);
-            });
-        }
-        else {
-            $.ajax({
-                url: URL6,
-                method: "GET",
-            }).then(function (response) {
-                console.log(response.hits[0].largeImageURL + "else triggered");
-                var imageLink = response.hits[0].largeImageURL;
-                var imageTrending = $("<img>").attr("src", imageLink).attr("class", "d-block w-100");
-                // ask how to insert the variable i to the ID so that it populates the next div
-                $("#trendingTopic6").html(imageTrending);
-
-            })
-        }
+    $.getJSON(URL6, function(data) {
+      if (parseInt(data.totalHits) == 0) {
+        $.ajax({
+          url: URL6alt,
+          method: 'GET'
+        }).then(function(response) {
+          console.log(response.hits[randomizer].largeImageURL + 'No Result');
+          var imageLink = response.hits[randomizer].largeImageURL;
+          var imageTrending = $('<img>')
+            .attr('src', imageLink)
+            .attr('class', 'd-block w-100');
+          // ask how to insert the variable i to the ID so that it populates the next div
+          $('#trendingTopic6').html(imageTrending);
+        });
+      } else {
+        $.ajax({
+          url: URL6,
+          method: 'GET'
+        }).then(function(response) {
+          console.log(response.hits[0].largeImageURL + 'else triggered');
+          var imageLink = response.hits[0].largeImageURL;
+          var imageTrending = $('<img>')
+            .attr('src', imageLink)
+            .attr('class', 'd-block w-100');
+          // ask how to insert the variable i to the ID so that it populates the next div
+          $('#trendingTopic6').html(imageTrending);
+        });
+      }
     });
 
     // END OF TRENDING IMAGE 6 ------->
 
+    // START OF TRENDING IMAGE 7 ------->
 
-                    // START OF TRENDING IMAGE 7 ------->
-
-                    $.getJSON(URL7, function (data) {
-        if (parseInt(data.totalHits) == 0) {
-            $.ajax({
-                url: URL7alt,
-                method: "GET",
-            }).then(function (response) {
-                console.log(response.hits[randomizer].largeImageURL + "No Result");
-                var imageLink = response.hits[randomizer].largeImageURL;
-                var imageTrending = $("<img>").attr("src", imageLink).attr("class", "d-block w-100");
-                // ask how to insert the variable i to the ID so that it populates the next div
-                $("#trendingTopic7").html(imageTrending);
-            });
-        }
-        else {
-            $.ajax({
-                url: URL7,
-                method: "GET",
-            }).then(function (response) {
-                console.log(response.hits[0].largeImageURL + "else triggered");
-                var imageLink = response.hits[0].largeImageURL;
-                var imageTrending = $("<img>").attr("src", imageLink).attr("class", "d-block w-100");
-                // ask how to insert the variable i to the ID so that it populates the next div
-                $("#trendingTopic7").html(imageTrending);
-
-            })
-        }
+    $.getJSON(URL7, function(data) {
+      if (parseInt(data.totalHits) == 0) {
+        $.ajax({
+          url: URL7alt,
+          method: 'GET'
+        }).then(function(response) {
+          console.log(response.hits[randomizer].largeImageURL + 'No Result');
+          var imageLink = response.hits[randomizer].largeImageURL;
+          var imageTrending = $('<img>')
+            .attr('src', imageLink)
+            .attr('class', 'd-block w-100');
+          // ask how to insert the variable i to the ID so that it populates the next div
+          $('#trendingTopic7').html(imageTrending);
+        });
+      } else {
+        $.ajax({
+          url: URL7,
+          method: 'GET'
+        }).then(function(response) {
+          console.log(response.hits[0].largeImageURL + 'else triggered');
+          var imageLink = response.hits[0].largeImageURL;
+          var imageTrending = $('<img>')
+            .attr('src', imageLink)
+            .attr('class', 'd-block w-100');
+          // ask how to insert the variable i to the ID so that it populates the next div
+          $('#trendingTopic7').html(imageTrending);
+        });
+      }
     });
 
     // END OF TRENDING IMAGE 7 ------->
+
 
 
 
@@ -400,16 +408,12 @@ var queryURL = test;
 
     // CLOSING FOR API TRENDSPOTTER VERSION --->
 
-    function randerNextPage () {
-      clickQuery =  $(this).attr("topicQuery") ;
-      console.log ("CLICKED ON " + $(this).attr("topicQuery"));
-      window.location.href = "hottopicsSearch.html?search=" + clickQuery
+
+  function randerNextPage() {
+    clickQuery = $(this).attr('topicQuery');
+    console.log('CLICKED ON ' + $(this).attr('topicQuery'));
+    window.location.href = 'hottopicsSearch.html?search=' + clickQuery;
   }
-  
-  $(document).on("click", ".onclickQuery", randerNextPage);
-  
-  
 
-
+  $(document).on('click', '.onclickQuery', randerNextPage);
 });
-
