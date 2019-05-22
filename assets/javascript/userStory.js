@@ -58,7 +58,7 @@ $(document).ready(function() {
     //1. store img
 
     var userAdverter = $('<img>').attr('style', 'width: 100px;');
-    userAdverter.attr('src', '../assets/imgs/Asset' + childSanpshot.val().AveterImageNum + '.png');
+    userAdverter.attr('src', 'assets/imgs/Asset' + childSanpshot.val().AveterImageNum + '.png');
 
     //2. store name and location of volunteer
     var userName = $('<h5>').text(childSanpshot.val().Name);
