@@ -19,7 +19,9 @@ $(document).ready(function() {
 
   //type keyword in the search bar on the main page and dispay info on the VolunteerSearch page
   var randerNextPage = function() {
-    window.location.href = '../html/hottopicsSearch.html?search=' + $('#hottopicSearch').val();
+
+    window.location.href = 'html/hottopicsSearch.html?search=' + $('#hottopicSearch').val();
+
   };
 
   // on the main page, if hottopic search button is clicked, redirect to the VolunteerSearch page and apply input value to url
