@@ -412,7 +412,7 @@ var queryURL = test;
   function randerNextPage() {
     clickQuery = $(this).attr('topicQuery');
     console.log('CLICKED ON ' + $(this).attr('topicQuery'));
-    window.location.href = 'html/hottopicsSearch.html?search=' + clickQuery;
+    window.location.href = '../../html/hottopicsSearch.html?search=' + clickQuery;
   }
 
   $(document).on('click', '.onclickQuery', randerNextPage);
