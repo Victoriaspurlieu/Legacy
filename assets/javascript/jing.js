@@ -11,6 +11,14 @@ function initMap() {
 $(document).ready(function() {
   var urlParams = new URLSearchParams(window.location.search);
 
+  //type keyword in the search bar on the main page and dispay info on the VolunteerSearch page
+  var randerNextPage = function() {
+
+    window.location.href = 'html/hottopicsSearch.html?search=' + $('#hottopicSearch').val();
+
+  };
+
+
   //search bar is clicked or keypress on the MAIN PAGE!
 
   // on the main page, if hottopic search button is clicked, redirect to the VolunteerSearch page and apply input value to url
@@ -23,13 +31,6 @@ $(document).ready(function() {
     }
   });
 
-  //type keyword in the search bar on the main page and dispay info on the VolunteerSearch page
-    var randerNextPage = function() {
-
-      window.location.href = 'html/hottopicsSearch.html?search=' + $('#hottopicSearch').val();
-  
-    };
-  
 
   //SEARCH PAGE!!
 
