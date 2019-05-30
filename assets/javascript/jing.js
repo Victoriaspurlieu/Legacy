@@ -11,7 +11,7 @@ function initMap() {
 $(document).ready(function() {
   var urlParams = new URLSearchParams(window.location.search);
 
-  //type keyword in the search bar on the main page and dispay info on the VolunteerSearch page
+  //type keyword in the search bar on the main page and display info on the VolunteerSearch page
   var randerNextPage = function() {
 
     window.location.href = 'html/hottopicsSearch.html?search=' + $('#hottopicSearch').val();
@@ -21,7 +21,7 @@ $(document).ready(function() {
 
   //search bar is clicked or keypress on the MAIN PAGE!
 
-  // on the main page, if hottopic search button is clicked, redirect to the VolunteerSearch page and apply input value to url
+  // on the main page, if the hottopic search button is clicked, redirect to the VolunteerSearch page and apply input value to url
   $('#hottopicSearchBtn').on('click', randerNextPage);
 
   // on the main page or VolunteerSearch page, if the Enter key is pressed, redirect to the VolunteerSearch page and apply input value to url
